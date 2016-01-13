@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.admin.sannap.TodayTemperature">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/Toolbar_Theme"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cervical Mucus Quality"
+            android:layout_gravity="start"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toolbar_text_size"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/big_text_size"
+            android:textColor="#ffffff"
+            android:textStyle="italic"
+            android:text="Any observations?"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+
+
+            <NumberPicker
+                android:id="@+id/cervical_picker"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+            </NumberPicker>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_period_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_button_customized"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

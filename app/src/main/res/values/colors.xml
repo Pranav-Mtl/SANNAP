@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4c2a4f</color>
+    <color name="colorPrimaryDark">#46004D</color>
+    <color name="textColorPrimary">#fff</color>
+    <color name="colorAccent">#C26FC9</color>
+    <color name="textSecondaryColor">#9C9C9C</color>
+
+    <color name="textColor">#fff</color>
+    <color name="textColorDark">#4c2a4f</color>
+    <color name="color">#FFFFFF</color>
+
+    <color name="red">#E53939</color>
+    <color name="red_alpha">#66FF0000</color>
+    <color name="light_pink">#CC91C3</color>
+    <color name="blue">#0097c2</color>
+    <color name="green">#00905f</color>
+    <color name="light_green">#94ac3c</color>
+    <color name="purple">#67029c</color>
+    <color name="dark_pink">#a83f67</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+
+    <color name="button_default">#fff</color>
+    <color name="button_pressed">#000</color>
+    <color name="button_text_color">#4c2a4f</color>
+
+
+</resources>

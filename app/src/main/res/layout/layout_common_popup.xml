@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/popup_element"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/referral_popup_bg"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@color/colorPrimary"
+            >
+        <TextView
+            android:id="@+id/popup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold"
+            />
+            <ImageButton
+                android:id="@+id/popup_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_button_customized"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/small_text_size"
+                android:padding="5dp"
+                android:layout_alignParentRight="true"
+                android:minHeight="@dimen/button_size"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+        <TextView
+            android:id="@+id/popup_message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorDark"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="@dimen/small_text_size"
+            android:layout_marginTop="10dp"
+            android:singleLine="false"
+            android:visibility="gone"
+            android:text="hhhh"
+            />
+
+
+
+            <LinearLayout
+                android:id="@+id/popup_spotting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_spotting"
+
+            />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spotting"
+                    android:textColor="@color/textColorDark"
+                    android:layout_marginTop="5dp"
+                    />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pill"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+            <ImageButton
+                android:id="@+id/popup_pill_taken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_pill_taken"
+                />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taken"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    >
+                <ImageButton
+                    android:id="@+id/popup_pill_late"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/ic_pill_late"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Late"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    >
+                <ImageButton
+                    android:id="@+id/popup_pill_missed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/ic_pill_missed"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missed"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    >
+                <ImageButton
+                    android:id="@+id/popup_pill_double"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_pill_double"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Double"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                    </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_test"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+            <ImageButton
+                android:id="@+id/popup_test_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_test_positive"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Positive"
+                    android:textColor="@color/textColorDark"
+                    android:layout_marginTop="5dp"
+                    />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                >
+
+            <ImageButton
+                android:id="@+id/popup_test_negative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/ic_test_negative"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Negative"
+                    android:textColor="@color/textColorDark"
+                    android:layout_marginTop="5dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_sex"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/popup_protected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_test_positive"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Protected"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/popup_unprotected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/ic_test_negative"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unprotected"
+                        android:textColor="@color/textColorDark"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp"
+
+            >
+         <!--   <Button
+                android:id="@+id/popup_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customized_color_button"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/small_text_size"
+                android:padding="5dp"
+                android:minHeight="@dimen/button_size"
+
+                />-->
+
+           <!-- <Button
+                android:id="@+id/popup_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/customized_color_button"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="@dimen/small_text_size"
+                android:padding="5dp"
+                android:minHeight="@dimen/button_size"
+                />-->
+        </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/popup_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fe1119"
+            android:gravity="center"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

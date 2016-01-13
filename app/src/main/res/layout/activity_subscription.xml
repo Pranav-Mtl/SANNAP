@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:text="YOUR LOVE BOX IS FILLED WITH A,B,C,D,E"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/subscription_box_img"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#2a192c"
+                android:layout_marginTop="17dp"/>
+</LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/list_layout"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/subscription_list"
+            android:layout_width="fill_parent"
+            android:layout_marginBottom="70dp"
+            android:layout_height="fill_parent">
+        </ListView>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:layout_centerHorizontal="true"
+                android:text="CHECKOUT"
+                android:textColor="#ffffff"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/subscription_btnbg" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

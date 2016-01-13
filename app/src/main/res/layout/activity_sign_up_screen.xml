@@ -1,0 +1,167 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_image">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal">
+
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logo_image"
+                android:layout_marginTop="20dp"
+                />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:hint="Name"
+                android:drawablePadding="5dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:drawableLeft="@drawable/login_email"
+                android:background="@android:color/transparent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"/>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:hint="Email address"
+                android:drawablePadding="5dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:drawableLeft="@drawable/login_email"
+                android:background="@android:color/transparent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"/>
+
+
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:hint="Password"
+                android:drawablePadding="5dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                android:imeOptions="actionNext"
+                android:drawableLeft="@drawable/login_password"
+                android:background="@android:color/transparent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"/>
+
+
+
+            <EditText
+                android:id="@+id/confirm_password"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:hint="Confirm password"
+                android:drawablePadding="5dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/login_password"
+                android:imeOptions="actionDone"
+                android:background="@android:color/transparent"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"/>
+
+
+
+
+            <Button
+                android:id="@+id/signup_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customized_button"
+                android:layout_marginTop="30dp"
+                android:text="SIGNUP"
+                android:textColor="@color/button_text_color"
+                android:minHeight="@dimen/button_size"
+                />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customized_button"
+                android:layout_marginTop="20dp"
+                android:text="Already Registered? login"
+                android:textColor="@color/button_text_color"
+                android:minHeight="@dimen/button_size"
+                />
+
+               <Button
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   android:text="Signup With Facebook"
+                   android:textColor="#ffffff"
+                   android:background="@drawable/fb_btn_bg"/>
+
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+
+
+                android:text="By registering, I accept Terms of Services and Privacy policy"
+                />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

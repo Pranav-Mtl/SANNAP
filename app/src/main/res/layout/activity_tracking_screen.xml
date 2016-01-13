@@ -1,0 +1,360 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:theme="@style/Toolbar_Theme"
+            android:layout_gravity="center"
+            android:elevation="8dp"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tracking Options"
+                android:layout_gravity="start"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/toolbar_text_size"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
+        android:background="#f2f2f2"
+        android:layout_marginRight="15dp"
+
+        >
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#76858f"
+    android:text="Period"/>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bleeding"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_img"/>
+
+            <ToggleButton
+                android:id="@+id/first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collection Method"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:textColor="#76858f"
+                android:drawableLeft="@drawable/tracker_img"/>
+
+            <ToggleButton
+                android:id="@+id/second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Body"
+            android:textColor="#76858f"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp"
+            />
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Craving"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digestion"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/forth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fluid"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/fifth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hair"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/sixth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pain"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/seventh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skin"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/eighth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stool"
+                android:textColor="#76858f"
+                android:gravity="center_horizontal"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/tracker_icon"/>
+
+            <ToggleButton
+                android:id="@+id/nine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body_toggle_selector"
+                android:minHeight="20dp"
+                android:minWidth="20dp"
+                android:textOn=""
+                android:textOff=""
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    </LinearLayout>

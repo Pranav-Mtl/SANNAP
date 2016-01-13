@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/red"
+    tools:context="com.example.admin.sannap.PeriodDatePicker">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/Toolbar_Theme"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        android:background="@color/red"
+        android:minHeight="?attr/actionBarSize">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Period Date"
+            android:layout_gravity="start"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toolbar_text_size"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/light_pink"
+        app:mcv_dateTextAppearance="@style/Toolbar_Theme"
+        app:mcv_weekDayTextAppearance="@style/Toolbar_Theme"
+        app:mcv_headerTextAppearance="@style/Toolbar_Theme"
+        app:mcv_arrowColor="@color/white"
+        />
+        <ImageButton
+            android:id="@+id/btn_period_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_button_customized"/>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.admin.sannap">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+
+
+        <activity
+            android:name=".FirstScreen"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeScreen"
+            android:label="@string/title_activity_home_screen" />
+
+        <!-- <activity -->
+        <!-- android:name=".ProductDetail" -->
+        <!-- android:label="@string/title_activity_product_detail" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" > -->
+        <!-- </activity> -->
+
+        <activity
+            android:name=".AddressScreen"
+            android:label="@string/title_activity_address_screen" />
+        <activity
+            android:name=".ShopScreen"
+            android:label="@string/title_activity_shop_screen" />
+        <activity
+            android:name=".Subscription"
+            android:label="@string/title_activity_subscription" />
+
+        <!-- <activity -->
+        <!-- android:name=".PaymentActivity" -->
+        <!-- android:label="@string/title_activity_payment" -->
+        <!-- android:theme="@style/AppTheme1"> -->
+        <!-- </activity> -->
+
+        <activity
+            android:name=".QuestionScreen"
+            android:label="" />
+        <activity
+            android:name=".LoginScreen"
+            android:label="@string/title_activity_login_screen" />
+        <!--
+            <activity
+            android:name=".FirstScreen"
+            android:label="@string/title_activity_first_screen" />
+        -->
+        <activity
+            android:name=".SetUpScreen"
+            android:label="@string/title_activity_set_up_screen" />
+        <activity
+            android:name=".Notification"
+            android:label="@string/title_activity_notification" />
+
+        <!--  -->
+        <!-- <activity -->
+        <!-- android:name=".ReminderScreen" -->
+        <!-- android:label="@string/title_activity_reminder_screen" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" > -->
+        <!-- </activity> -->
+
+
+        <!-- <activity -->
+        <!-- android:name=".TrackingScreen" -->
+        <!-- android:label="@string/title_activity_tracking_screen" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar" > -->
+        <!-- </activity> -->
+
+        <activity
+            android:name=".CycleHistory"
+            android:label="@string/title_activity_cycle_history" />
+        <activity
+            android:name=".TodayScreen"
+            android:label="" />
+        <activity
+            android:name=".TodayFirstActivity"
+            android:label="@string/title_activity_today_first" />
+        <activity
+            android:name=".SignUpScreen"
+            android:label="" />
+        <activity
+            android:name=".PeriodLenghtPicker"
+            android:label="" />
+        <activity
+            android:name=".CycleLengthPicker"
+            android:label="" />
+        <activity
+            android:name=".AgePicker"
+            android:label="" />
+        <activity
+            android:name=".PmsLengthPicker"
+            android:label="" />
+        <activity
+            android:name=".PeriodDatePicker"
+            android:label="" />
+        <activity
+            android:name=".TodayBody"
+            android:label="" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".TodayMood"
+            android:label="" />
+        <activity
+            android:name=".TodayTemperature"
+            android:label="" />
+        <activity android:name=".TodayCervical"
+            android:label=""
+            ></activity>
+    </application>
+
+</manifest>
