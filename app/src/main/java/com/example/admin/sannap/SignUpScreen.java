@@ -144,7 +144,6 @@ public class SignUpScreen extends AppCompatActivity {
             emailEdt.setError("Enter valid email address");
             flag=false;
         }
-
         return flag;
     }
 

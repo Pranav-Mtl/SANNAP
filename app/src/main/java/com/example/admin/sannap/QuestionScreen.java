@@ -23,6 +23,8 @@ public class QuestionScreen extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_screen);
+
+
         viewPager= (ViewPager) findViewById(R.id.pager);
         questionPagerAdapter=new QuestionPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(questionPagerAdapter);

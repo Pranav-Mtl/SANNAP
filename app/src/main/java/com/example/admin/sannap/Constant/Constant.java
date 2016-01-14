@@ -22,5 +22,7 @@ public class Constant {
     public static String SP_LOGIN_ID="login";
 
     public static String WS_SIGNUP="signup.php";
+    public static String WS_SIGNIN="login.php";
+    public static String WS_HOMESCREEN="user_data";
 
 }

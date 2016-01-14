@@ -21,11 +21,9 @@ public class SignupBL {
     public String signUpRecord(Context context,SignupBE signupBE) {
 
             objSignupBE=signupBE;
-        mContext=context;
+            mContext=context;
             String result = fetRecord();
             String finalvalue = validate(result);
-
-
 
         return finalvalue;
 
@@ -33,10 +31,9 @@ public class SignupBL {
 
     private String fetRecord() {
         String text = null;
-
         try
         {
-            String userData="1:period:"+objSignupBE.getPeriodLength()+",2:cycle_length:"+objSignupBE.getPeriodLength()+",3:last_period:"+objSignupBE.getPeriodDate()+",4:age:"+objSignupBE.getAge()+",5:research:"+objSignupBE.getResearch()+",6:pms:"+objSignupBE.getPms();
+            String userData="1:period:"+objSignupBE.getPeriodLength()+",2:cycle_length:"+objSignupBE.getPeriodCycle()+",3:last_period:"+objSignupBE.getPeriodDate()+",4:age:"+objSignupBE.getAge()+",5:research:"+objSignupBE.getResearch()+",6:pms:"+objSignupBE.getPms();
             //String userData="1-period-"+objSignupBE.getPeriodLength()+",2-pms-"+objSignupBE.getPms()+",3-cycle_length-"+objSignupBE.getPeriodLength()+",4-last_period-"+objSignupBE.getPeriodDate()+",5-research-"+objSignupBE.getResearch()+",6-age-"+objSignupBE.getAge();
             ////http://oneclickwash.com/webservices/signup.php?mobile=&email=&city=&address=&password=&gcm_id=&otp=
             String URL="name="+objSignupBE.getName()+"&email="+objSignupBE.getEmail()+"&password="+objSignupBE.getPassword()+"&gcm_id="+objSignupBE.getGcmID()+"&device_id="+objSignupBE.getDeviceID()+"&user_data="+userData+"&age="+objSignupBE.getAge();

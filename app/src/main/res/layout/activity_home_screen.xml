@@ -131,7 +131,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-
                 />
 
             <LinearLayout
@@ -147,14 +146,34 @@
                     android:id="@+id/circular_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Day 1"
+                    android:text=""
+                    android:textSize="@dimen/small_text_size"
                     />
                 <TextView
                     android:id="@+id/circular_period"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fertile Period"
+                    android:text=""
                     android:padding="5dp"
+                    android:textSize="@dimen/small_text_size"
+                    />
+                <TextView
+                    android:id="@+id/circular_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/small_text_size"
+                    />
+
+                <TextView
+                    android:id="@+id/circular_nextcycle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:padding="5dp"
+                    android:textSize="@dimen/small_text_size"
                     />
 
             </LinearLayout>

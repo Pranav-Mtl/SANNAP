@@ -23,6 +23,7 @@ public class TodayBodyAdapter extends  RecyclerView.Adapter<TodayBodyAdapter.Tod
     private List bodyList;
 
     Integer image[]={R.drawable.ic_backpain,R.drawable.ic_cramps,R.drawable.ic_cravings,R.drawable.ic_headache,R.drawable.ic_flashes,R.drawable.ic_insomnia,R.drawable.ic_skin,R.drawable.ic_breasts,R.drawable.ic_tired,R.drawable.ic_stomach};
+
     public TodayBodyAdapter(Context context){
         mContext=context;
         bodyList=new ArrayList();

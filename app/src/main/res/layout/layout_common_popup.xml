@@ -83,7 +83,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_spotting"
+            android:background="@drawable/ic_spotting_big"
 
             />
 
@@ -266,7 +266,7 @@
                         android:id="@+id/popup_protected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_test_positive"
+                        android:background="@drawable/ic_sex_protected"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -290,7 +290,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:background="@drawable/ic_test_negative"
+                        android:background="@drawable/ic_sex_unprotected"
                         />
                     <TextView
                         android:layout_width="wrap_content"
