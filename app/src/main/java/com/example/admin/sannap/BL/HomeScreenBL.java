@@ -78,6 +78,11 @@ public class HomeScreenBL {
             objHomeScreenBE.setName(jsonObject.get("name").toString());
             objHomeScreenBE.setEmail(jsonObject.get("email").toString());
             objHomeScreenBE.setAge(jsonObject.get("age").toString());
+            objHomeScreenBE.setPhone(jsonObject.get("phone").toString());
+            objHomeScreenBE.setAddress(jsonObject.get("address").toString());
+            objHomeScreenBE.setCity(jsonObject.get("city").toString());
+            objHomeScreenBE.setZip(jsonObject.get("zip").toString());
+            objHomeScreenBE.setSubscribe(jsonObject.get("subscribe").toString());
 
 
         } catch (Exception e) {

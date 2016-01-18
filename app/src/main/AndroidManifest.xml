@@ -39,7 +39,7 @@
             android:label="@string/title_activity_shop_screen" />
         <activity
             android:name=".Subscription"
-            android:label="@string/title_activity_subscription" />
+            android:label="" />
 
         <!-- <activity -->
         <!-- android:name=".PaymentActivity" -->
@@ -53,7 +53,7 @@
         <activity
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen" />
-            <activity
+        <activity
             android:name=".FirstScreen"
             android:label="" />
         <activity
@@ -124,8 +124,13 @@
         <activity
             android:name=".TodayCervical"
             android:label="" />
-        <!--<activity android:name=".SplashScreen"></activity>-->
+        <!-- <activity android:name=".SplashScreen"></activity> -->
+        <activity
+            android:name=".SubscriptionDetail"
+            android:label="" />
+        <activity android:name=".SubscriptionCheckout"
+            android:label=""
+            ></activity>
     </application>
-
 
 </manifest>

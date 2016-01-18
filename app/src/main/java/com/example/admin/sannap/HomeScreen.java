@@ -219,6 +219,10 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
             try{
                 seekbar.setMax(objHomeScreenBE.getCycleLength());
 
+                if(objHomeScreenBE.getSubscribe().equalsIgnoreCase("Y")){
+                    subscription.setVisibility(View.GONE);
+                }
+
                 period=objHomeScreenBE.getPeriod();
                 bleakPeriod=objHomeScreenBE.getPeriod()+objHomeScreenBE.getPeriodBleak();
                 fertile=objHomeScreenBE.getPeriod()+objHomeScreenBE.getPeriodBleak()+objHomeScreenBE.getFertile();

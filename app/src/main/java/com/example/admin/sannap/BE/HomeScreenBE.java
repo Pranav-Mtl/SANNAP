@@ -8,8 +8,48 @@ public class HomeScreenBE {
     private int cycleLength,period,periodBleak,fertile,afterFertile,pms;
     private int nextCycleLength,nextPeriod,nextPeriodBleak,nextFertile,nextAfterFertile,nextPms;
 
-    private String name,email,age;
+    private String name,email,age,phone,address,city,zip,subscribe;
     private String firstDay,nextFirstDay;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(String subscribe) {
+        this.subscribe = subscribe;
+    }
 
     public int getFertile() {
         return fertile;

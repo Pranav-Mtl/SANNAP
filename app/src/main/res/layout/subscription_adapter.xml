@@ -2,126 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@color/white"
+    android:padding="10dp"
     android:layout_height="match_parent">
 
 
-
-
-
-<LinearLayout
-    android:layout_width="fill_parent"
+<TextView
+    android:id="@+id/subscription_model_name"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:weightSum="2"
-    >
+    android:paddingBottom="5dp"
+    android:textStyle="bold"
+    android:textAllCaps="true"
+    android:textColor="@color/textColorDark"
+    />
 
+    <TextView
+        android:id="@+id/subscription_model_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/textColorDark"
+        />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:background="@android:color/transparent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subscription_bucket"
-            />
-
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="16sp"
-            android:drawableLeft="@drawable/rupee_img"
-            android:drawablePadding="5dp"
-            android:text="750" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:text="Add me"
-                android:textSize="16sp"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
-<LinearLayout
-    android:layout_width="1dp"
-    android:layout_height="fill_parent"
-    android:background="#2a192c"/>
+    <TextView
+        android:id="@+id/subscription_model_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/textColorDark"
+        />
 
 
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:background="@android:color/transparent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/subscription_bucket"/>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-
-
-            >
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:text="Add me"
-                android:textColor="#ffffff"
-                android:textSize="16sp"
-                android:layout_centerHorizontal="true"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="750"
-                android:drawableLeft="@drawable/rupee_img"
-                android:drawablePadding="5dp"
-                android:layout_marginRight="5dp"
-                android:textSize="16sp"
-                android:layout_alignParentRight="true"
-                android:textColor="#ffffff"/>
-
-
-        </RelativeLayout>
 
 
 
-    </LinearLayout>
-
-
-
-</LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#2a192c"/>
 
 
 </LinearLayout>

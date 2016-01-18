@@ -3,51 +3,50 @@ package com.example.admin.sannap;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ListView;
+import android.widget.Button;
 
-import com.example.admin.sannap.Adapter.SubscriptionAdapter;
+import com.example.admin.sannap.Adapter.SubscriptionDetailAdapter;
 import com.example.admin.sannap.Constant.Constant;
 
-public class Subscription extends AppCompatActivity {
+public class SubscriptionDetail extends AppCompatActivity implements View.OnClickListener {
 
+    RecyclerView recycleDetail;
 
-    GridView list;
-    SubscriptionAdapter subscriptionAdapter;
+    String modelID,modelname,modelPrice;
+
     ProgressDialog progressDialog;
+
+    SubscriptionDetailAdapter objSubscriptionDetailAdapter;
+
+    Button btnCheckout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subscription);
-
+        setContentView(R.layout.activity_subscription_detail);
         initialize();
 
-        new GetSubscriptionData().execute();
-
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), SubscriptionDetail.class).putExtra("Model", Constant.modelID[position]).putExtra("ModelName", Constant.modelName[position]).putExtra("ModelPrice",Constant.modelPrice[position]));
-            }
-        });
-
-
+        new GetData().execute(modelID);
     }
 
     private void initialize(){
-        list= (GridView) findViewById(R.id.subscription_gridview);
-        progressDialog=new ProgressDialog(Subscription.this);
+        recycleDetail= (RecyclerView) findViewById(R.id.subscription_detail);
+        btnCheckout= (Button) findViewById(R.id.detail_checkout);
+
+        btnCheckout.setOnClickListener(this);
+
+        recycleDetail.setHasFixedSize(true);
+        final LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recycleDetail.setLayoutManager(llm);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,6 +54,12 @@ public class Subscription extends AppCompatActivity {
         ActionBar actionBar=getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        progressDialog=new ProgressDialog(SubscriptionDetail.this);
+
+        modelID=getIntent().getStringExtra("Model");
+        modelname=getIntent().getStringExtra("ModelName");
+        modelPrice=getIntent().getStringExtra("ModelPrice");
     }
 
     @Override
@@ -74,7 +79,18 @@ public class Subscription extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class GetSubscriptionData extends AsyncTask<String,String,String>{
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.detail_checkout:
+                startActivity(new Intent(getApplicationContext(),SubscriptionCheckout.class).putExtra("Model",modelID).putExtra("ModelName", modelname).putExtra("ModelPrice",modelPrice));
+                break;
+        }
+    }
+
+
+    private class GetData extends AsyncTask<String,String,String>{
+
         @Override
         protected void onPreExecute() {
             progressDialog.show();
@@ -84,14 +100,14 @@ public class Subscription extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            subscriptionAdapter=new SubscriptionAdapter(getApplicationContext());
+            objSubscriptionDetailAdapter=new SubscriptionDetailAdapter(getApplicationContext(),params[0]);
             return "";
         }
 
         @Override
         protected void onPostExecute(String s) {
             try {
-                list.setAdapter(subscriptionAdapter);
+                recycleDetail.setAdapter(objSubscriptionDetailAdapter);
             }catch (NullPointerException e){
 
             }catch (Exception e){
@@ -101,5 +117,4 @@ public class Subscription extends AppCompatActivity {
             }
         }
     }
-
 }

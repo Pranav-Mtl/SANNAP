@@ -24,5 +24,22 @@ public class Constant {
     public static String WS_SIGNUP="signup.php";
     public static String WS_SIGNIN="login.php";
     public static String WS_HOMESCREEN="user_data";
+    public static String WS_SUBSCRIPTION="subscription_list";
+    public static String WS_SUBSCRIPTION_DETAIL="subscription_detail";
+    public static String WS_SUBSCRIPTION_CHECKOUT="user_subscribe";
+
+
+    /* SUBSCRIPTION LIST */
+
+    public static String modelID[];
+    public static String modelName[];
+    public static String modelPrice[];
+    public static String modelOriginal[];
+
+    /* SUBSCRIPTION DETAIL*/
+
+    public static String detailName[];
+    public static String detailQuantity[];
+    public static String detailUnit[];
 
 }
