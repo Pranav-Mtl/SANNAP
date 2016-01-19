@@ -36,7 +36,7 @@
             android:label="@string/title_activity_address_screen" />
         <activity
             android:name=".ShopScreen"
-            android:label="@string/title_activity_shop_screen" />
+            android:label="" />
         <activity
             android:name=".Subscription"
             android:label="" />
@@ -128,9 +128,15 @@
         <activity
             android:name=".SubscriptionDetail"
             android:label="" />
-        <activity android:name=".SubscriptionCheckout"
-            android:label=""
-            ></activity>
+        <activity
+            android:name=".SubscriptionCheckout"
+            android:label="" />
+        <activity
+            android:name=".Cart"
+            android:label="" />
+        <activity
+            android:name=".ShopingConfirmed"
+            android:label="" />
     </application>
 
 </manifest>

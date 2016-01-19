@@ -21,6 +21,8 @@
     <color name="white">#fff</color>
     <color name="black">#000</color>
 
+    <color name="light_bg">#f2f2f2</color>
+
     <color name="button_default">#fff</color>
     <color name="button_pressed">#000</color>
     <color name="button_text_color">#4c2a4f</color>

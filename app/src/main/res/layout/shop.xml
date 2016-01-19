@@ -2,168 +2,128 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="#f2f2f2"
     android:layout_height="match_parent">
 
 
-
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
 
+        android:background="@drawable/shop_bg_shape"
+        >
+
+        <ImageView
+            android:id="@+id/shop_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            />
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_height="180dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/shop_bg_img">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/shop_img"/>
-
+            android:layout_marginTop="10dp"
+            >
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:background="#f2f2f2"/>
+                android:background="@color/textSecondaryColor"
 
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:weightSum="4"
+
+            >
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical"
 
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/shop_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Product name"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="$99"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="fill_parent"
-                    android:background="#f2f2f2"
-                    android:layout_alignParentRight="true"
+                    android:text="Item Name"
+                    android:padding="5dp"
+                    android:textColor="@color/textColorDark"
+                    android:textSize="@dimen/small_text_size"
+                    android:textStyle="bold"
                     />
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/shop_price"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/shop_bucket_img"/>
-                </LinearLayout>
+                    android:text="Item Price"
+                    android:padding="5dp"
+                    android:textColor="@color/textColorDark"
+                    android:textSize="@dimen/small_text_size"
+                    />
             </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:layout_height="180dp"
-            android:orientation="vertical"
-            android:background="@drawable/shop_bg_img">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/shop_img"/>
-
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/textSecondaryColor"
+                />
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:background="#f2f2f2"/>
+                android:id="@+id/ll_add_cart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-
-                <LinearLayout
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="Product name"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:text="$99"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="fill_parent"
-                    android:background="#f2f2f2"
-                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shop_bucket_img"
+                    android:layout_gravity="center"
                     />
 
-
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:text="Add"
+                    android:textColor="@color/textColorDark"
+                    android:layout_marginTop="5dp"
+                    />
 
-                    <ImageView
+            </LinearLayout>
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/shop_bucket_img"/>
-                </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_added"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Added"
+                    android:textColor="@color/textColorDark"
+                    android:layout_gravity="center"
+                    />
+
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
+
+
 </LinearLayout>

@@ -23,4 +23,11 @@
     <string name="title_activity_cycle_history">CycleHistory</string>
     <string name="title_activity_today_screen">TodayScreen</string>
     <string name="title_activity_today_first">TodayFirstActivity</string>
+
+
+
+    <string name="_payment_title">Select Payment Method</string>
+    <string name="_payment_message"></string>
+    <string name="_payment_save">Done</string>
+    <string name="_payment_cancel">Cancel</string>
 </resources>

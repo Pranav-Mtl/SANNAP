@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.admin.sannap.ShopingConfirmed">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/Toolbar_Theme"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check out"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toolbar_text_size"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:text="Personal Information"
+            android:textStyle="bold"
+            android:textColor="@color/textColorDark"
+            />
+
+        <EditText
+            android:id="@+id/checkout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionNext"
+            android:hint="Name"
+            android:singleLine="true"
+            />
+        <EditText
+            android:id="@+id/checkout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/login_email"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionNext"
+            android:hint="Email"
+            android:singleLine="true"
+            />
+
+        <EditText
+            android:id="@+id/checkout_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:inputType="number"
+            android:maxLength="10"
+            android:drawableLeft="@drawable/ic_mobile"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionNext"
+            android:hint="Mobile"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_edit"
+            />
+
+        <EditText
+            android:id="@+id/checkout_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/ic_address"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionNext"
+            android:hint="Address"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_edit"
+            />
+
+        <EditText
+            android:id="@+id/checkout_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionNext"
+            android:hint="City"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_edit"
+            />
+
+        <EditText
+            android:id="@+id/checkout_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textSecondaryColor"
+            android:drawableTint="@color/white"
+            android:backgroundTint="@color/white"
+            android:inputType="number"
+            android:maxLength="6"
+            android:drawableLeft="@drawable/ic_zip"
+            android:drawablePadding="5dp"
+            android:imeOptions="actionDone"
+            android:hint="Zip code"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_edit"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/shop_bg_shape"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorDark"
+                    android:text="Sub Total:"
+                    />
+
+                <TextView
+                    android:id="@+id/shop_checkout_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/textColorDark"
+                    android:text=""
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorDark"
+                    android:text="Tax (14%):"
+                    />
+
+                <TextView
+                    android:id="@+id/shop_checkout_tax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/textColorDark"
+                    android:text=""
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="10dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorDark"
+                    android:text="Grand Total"
+                    />
+
+                <TextView
+                    android:id="@+id/shop_checkout_grandtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/textColorDark"
+                    android:text=""
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/checkout_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/customized_button"
+        android:textColor="@color/button_text_color"
+        android:text="Submit"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:minHeight="@dimen/button_size"
+        />
+
+
+</RelativeLayout>
