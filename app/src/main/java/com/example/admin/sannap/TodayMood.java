@@ -1,23 +1,33 @@
 package com.example.admin.sannap;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.admin.sannap.Adapter.TodayBodyAdapter;
 import com.example.admin.sannap.Adapter.TodayMoodAdapter;
+import com.example.admin.sannap.BE.TodayBean;
 
 public class TodayMood extends AppCompatActivity {
 
     RecyclerView listBooking;
-    ImageButton btnBody;
+
 
     TodayMoodAdapter objTodayMoodAdapter;
+
+    TodayBean objTodayBean;
+
+    ImageButton btnMood;
+
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +37,29 @@ public class TodayMood extends AppCompatActivity {
 
         objTodayMoodAdapter=new TodayMoodAdapter(getApplicationContext());
         listBooking.setAdapter(objTodayMoodAdapter);
+
+
+        btnMood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (objTodayMoodAdapter.mSelectedItem < 0) {
+                    objTodayBean.setMood("");
+                } else {
+                    //Log.d("Mood",objTodayMoodAdapter.mapMood.values().toString().replace("[", "").replace("]", ""));
+                    objTodayBean.setMood(objTodayMoodAdapter.mapMood.values().toString().replace("[","").replace("]",""));
+                }
+                intent.putExtra("TodayBean",objTodayBean);
+                setResult(RESULT_OK,intent);
+                finish();
+            }
+        });
     }
 
 
     private void initialize(){
 
         listBooking= (RecyclerView) findViewById(R.id.mood_list);
-
+        btnMood= (ImageButton) findViewById(R.id.mood_ok);
 
         listBooking.setHasFixedSize(true);
 
@@ -42,8 +68,8 @@ public class TodayMood extends AppCompatActivity {
 
         listBooking.setLayoutManager(llm);
 
-
-
+        intent=getIntent();
+        objTodayBean= (TodayBean) intent.getSerializableExtra("TodayBean");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -53,6 +79,7 @@ public class TodayMood extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

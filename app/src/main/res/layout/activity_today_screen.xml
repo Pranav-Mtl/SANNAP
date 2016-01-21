@@ -29,6 +29,19 @@
             android:textStyle="bold"
             />
 
+        <ImageButton
+            android:id="@+id/today_Screen_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_round_check"
+
+            android:layout_alignParentRight="true"
+
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            />
+
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
@@ -221,6 +234,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_body"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -270,6 +284,7 @@
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/today_btn_notes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

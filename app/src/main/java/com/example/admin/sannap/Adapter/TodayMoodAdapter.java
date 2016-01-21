@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.admin.sannap.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +22,11 @@ public class TodayMoodAdapter extends  RecyclerView.Adapter<TodayMoodAdapter.Tod
 
     Context mContext;
     private List moodList;
+
+    public int mSelectedItem = -1;
+    CheckBox lastChecked;
+
+    public HashMap<Integer,String> mapMood=new HashMap<Integer,String>();
 
     Integer image[]={R.drawable.ic_angry,R.drawable.ic_happy,R.drawable.ic_desire,R.drawable.ic_sad,R.drawable.ic_sensitive,R.drawable.ic_stressed,R.drawable.ic_uncomfortable,R.drawable.ic_unsocial};
 
@@ -50,9 +56,30 @@ public class TodayMoodAdapter extends  RecyclerView.Adapter<TodayMoodAdapter.Tod
     }
 
     @Override
-    public void onBindViewHolder(TodayMoodHolder holder, int position) {
+    public void onBindViewHolder(TodayMoodHolder holder, final int position) {
         holder.tvBody.setText(moodList.get(position).toString());
         holder.ivBody.setBackgroundResource(image[position]);
+
+        holder.cbBody.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CheckBox cb = (CheckBox) v;
+
+                if (cb.isChecked()) {
+                    mapMood.put(position,moodList.get(position).toString());
+                    mSelectedItem++;
+
+
+                } else {
+                    mapMood.remove(position);
+                    mSelectedItem--;
+                }
+
+
+            }
+        });
+
     }
 
     @Override

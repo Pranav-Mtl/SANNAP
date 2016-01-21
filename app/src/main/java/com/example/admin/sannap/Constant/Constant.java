@@ -1,5 +1,7 @@
 package com.example.admin.sannap.Constant;
 
+import com.example.admin.sannap.R;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,6 +16,8 @@ public class Constant {
     public static final String MSG_KEY = "m";
 
     public static int cartItem=0;
+
+    public static  String Name="";
 
 
 
@@ -33,6 +37,12 @@ public class Constant {
     public static String WS_SHOP="item_list";
     public static String WS_SUBSCRIPTION_DETAIL="subscription_detail";
     public static String WS_SUBSCRIPTION_CHECKOUT="user_subscribe";
+    public static String WS_SHOPING_ORDER="order";
+    public static String WS_ORDER_HISTORY="order_user_details";
+    public static String WS_TODAY="order_user_details";
+
+    public static String  TITLES[]={"Order History","Reminders","Subscription"};
+    public static int ICONS[]={R.drawable.ic_order_history,R.drawable.ic_reminders,R.drawable.ic_subscription};
 
 
     /**/
@@ -59,6 +69,16 @@ public class Constant {
     public static int shopPrice[];
     public static String shopUnit[];
     public static String shopImage[];
+
+     /* History LIST */
+
+    public static String orderID[];
+    public static String orderName[];
+    public static String orderAddress[];
+    public static String orderAmount[];
+    public static String orderStatus[];
+    public static String orderItem[];
+    public static String orderDate[];
 
 
     /* SUBSCRIPTION DETAIL*/

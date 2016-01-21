@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.admin.sannap.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +22,12 @@ public class TodayBodyAdapter extends  RecyclerView.Adapter<TodayBodyAdapter.Tod
 
     Context mContext;
     private List bodyList;
+
+    public int mSelectedItem = -1;
+    CheckBox lastChecked;
+
+    public HashMap<Integer,String> mapBody=new HashMap<Integer,String>();
+
 
     Integer image[]={R.drawable.ic_backpain,R.drawable.ic_cramps,R.drawable.ic_cravings,R.drawable.ic_headache,R.drawable.ic_flashes,R.drawable.ic_insomnia,R.drawable.ic_skin,R.drawable.ic_breasts,R.drawable.ic_tired,R.drawable.ic_stomach};
 
@@ -49,9 +56,30 @@ public class TodayBodyAdapter extends  RecyclerView.Adapter<TodayBodyAdapter.Tod
     }
 
     @Override
-    public void onBindViewHolder(TodayBodyHolder holder, int position) {
+    public void onBindViewHolder(TodayBodyHolder holder,final int position) {
         holder.tvBody.setText(bodyList.get(position).toString());
         holder.ivBody.setBackgroundResource(image[position]);
+
+        holder.cbBody.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CheckBox cb = (CheckBox) v;
+
+                if (cb.isChecked()) {
+                    mapBody.put(position,bodyList.get(position).toString());
+                    mSelectedItem++;
+
+
+                } else {
+                    mapBody.remove(position);
+                    mSelectedItem--;
+                }
+
+
+            }
+        });
+
     }
 
     @Override

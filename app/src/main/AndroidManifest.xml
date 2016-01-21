@@ -88,7 +88,8 @@
             android:label="@string/title_activity_today_first" />
         <activity
             android:name=".SignUpScreen"
-            android:label="" />
+            android:label=""
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".PeriodLenghtPicker"
             android:label="" />
@@ -137,6 +138,12 @@
         <activity
             android:name=".ShopingConfirmed"
             android:label="" />
+        <activity
+            android:name=".OrderHistory"
+            android:label="" />
+        <activity android:name=".TodayNotes"
+            android:label=""
+            ></activity>
     </application>
 
 </manifest>

@@ -48,6 +48,8 @@ public class ShopAdapter extends BaseAdapter implements View.OnClickListener  {
         Constant.hmItemPrice=new HashMap<String,Integer>();
         Constant.hmItemQuantity=new HashMap<String,Integer>();*/
 
+        Constant.cartItem=0;
+
         Constant.listId=new ArrayList();
         Constant.listName=new ArrayList();
         Constant.listQuantity=new ArrayList();

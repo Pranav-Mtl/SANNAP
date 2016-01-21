@@ -40,6 +40,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name"
+                        android:textColor="@color/textColorDark"
                         android:background="@android:color/transparent"/>
 
                     <LinearLayout
@@ -61,6 +62,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
+                        android:textColor="@color/textColorDark"
                         android:hint="Surname"/>
 
                     <LinearLayout
@@ -79,6 +81,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@android:color/transparent"
                 android:hint="Card Number"
+                android:textColor="@color/textColorDark"
                 android:layout_marginLeft="10dp"/>
 
 
@@ -109,6 +112,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="Expiry Date"
+                        android:textColor="@color/textColorDark"
                         android:background="@android:color/transparent"/>
 
                     <LinearLayout
@@ -130,6 +134,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
+                        android:textColor="@color/textColorDark"
                         android:hint="CVV"/>
 
                     <LinearLayout
@@ -160,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:paddingLeft="10dp"
+                android:textColor="@color/textColorDark"
                 android:text="SubTotal"/>
 
 
@@ -169,6 +175,7 @@
                 android:textSize="16sp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
+                android:textColor="@color/textColorDark"
                 android:text="267.89"/>
 
         </RelativeLayout>
@@ -189,7 +196,7 @@
                 android:layout_alignParentBottom="true"
 
 
-                android:background="@drawable/payment_btn_bg"
+                android:background="@drawable/customized_color_button"
                 android:textSize="16sp"
                 android:text="NEXT"
                 android:textColor="#ffffff"

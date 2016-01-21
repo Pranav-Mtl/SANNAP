@@ -31,7 +31,8 @@ public class HomeScreenBL {
         String text = null;
 
         try
-        {  String URL="user_id="+userID;
+        {
+            String URL="user_id="+userID;
             text= RestFullWS.serverRequest(URL, Constant.WS_HOMESCREEN);
 
         }

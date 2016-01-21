@@ -1,50 +1,40 @@
 package com.example.admin.sannap;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.example.admin.sannap.Adapter.TodayBodyAdapter;
 import com.example.admin.sannap.BE.TodayBean;
 
-public class TodayBody extends AppCompatActivity  {
+public class TodayNotes extends AppCompatActivity {
 
-    RecyclerView listBooking;
-    ImageButton btnBody;
-    TodayBodyAdapter objTodayBodyAdapter;
+    ImageButton btnOK;
+    EditText tvNotes;
 
     TodayBean objTodayBean;
-
     Intent intent;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_today_body);
+        setContentView(R.layout.activity_today_notes);
         initialize();
 
-        objTodayBodyAdapter=new TodayBodyAdapter(getApplicationContext());
-        listBooking.setAdapter(objTodayBodyAdapter);
-
-        btnBody.setOnClickListener(new View.OnClickListener() {
+        btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(objTodayBodyAdapter.mSelectedItem<0){
-                    objTodayBean.setBody("");
-                } else {
-                   // Log.d("BODY",objTodayBodyAdapter.mapBody.values().toString().replace("[","").replace("]",""));
-                    objTodayBean.setBody(objTodayBodyAdapter.mapBody.values().toString().replace("[","").replace("]",""));
+                if(tvNotes.length()>0){
+                    objTodayBean.setNotes(tvNotes.getText().toString());
+                }
+                else {
+                    objTodayBean.setNotes("");
                 }
                 intent.putExtra("TodayBean",objTodayBean);
                 setResult(RESULT_OK,intent);
@@ -53,17 +43,12 @@ public class TodayBody extends AppCompatActivity  {
         });
     }
 
-        private void initialize(){
+    private void initialize(){
+        btnOK= (ImageButton) findViewById(R.id.notes_ok);
+        tvNotes= (EditText) findViewById(R.id.tv_today_notes);
 
-        listBooking= (RecyclerView) findViewById(R.id.body_list);
-            btnBody= (ImageButton) findViewById(R.id.body_ok);
-            listBooking.setHasFixedSize(true);
-        final LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listBooking.setLayoutManager(llm);
-
-            intent=getIntent();
-            objTodayBean= (TodayBean) intent.getSerializableExtra("TodayBean");
+        intent=getIntent();
+        objTodayBean= (TodayBean) intent.getSerializableExtra("TodayBean");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +56,6 @@ public class TodayBody extends AppCompatActivity  {
         ActionBar actionBar=getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override
@@ -90,6 +74,4 @@ public class TodayBody extends AppCompatActivity  {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

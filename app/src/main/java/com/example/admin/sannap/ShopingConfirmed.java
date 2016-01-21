@@ -3,6 +3,7 @@ package com.example.admin.sannap;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBar;
@@ -20,6 +21,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.sannap.BE.HomeScreenBE;
 import com.example.admin.sannap.BE.ShopingConfirmedBE;
@@ -39,7 +41,7 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
 
 
 
-    String strPhone,strAddress,strCity,strZip;
+    String strPhone,strAddress,strCity,strZip,strName,strEmail;
 
     HomeScreenBL objHomeScreenBL;
     HomeScreenBE objHomeScreenBE;
@@ -174,18 +176,43 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
 
             case R.id.checkout_done:
-            objShopingConfirmedBE.setUserID(userID);
-            objShopingConfirmedBE.setBasePrice(totalPrice);
-            objShopingConfirmedBE.setTax(Math.ceil(taxPrice) + "");
-            objShopingConfirmedBE.setGrandTotal(Math.ceil(intTotalPrice) + "");
 
-            showDialogPayment(ShopingConfirmed.this);
+                if(validate()) {
+                    objShopingConfirmedBE.setUserID(userID);
+                    objShopingConfirmedBE.setBasePrice(totalPrice);
+                    objShopingConfirmedBE.setTax(Math.ceil(taxPrice) + "");
+                    objShopingConfirmedBE.setGrandTotal(Math.ceil(intTotalPrice) + "");
+
+                    objShopingConfirmedBE.setUserAddress(strAddress);
+                    objShopingConfirmedBE.setUserCity(strCity);
+                    objShopingConfirmedBE.setUserMobile(strPhone);
+                    objShopingConfirmedBE.setUserZip(strZip);
+                    objShopingConfirmedBE.setDiscountedPrice("");
+                    objShopingConfirmedBE.setPromocode("");
+                    objShopingConfirmedBE.setUserName(strName);
+                    objShopingConfirmedBE.setUserEmail(strEmail);
+
+                    String item="";
+
+                    for(int i=0;i<Constant.listId.size();i++){
+                        if(i==0)
+                        item=item+Constant.listId.get(i)+":"+Constant.listQuantity.get(i);
+                        else
+                            item=item+","+Constant.listId.get(i)+":"+Constant.listQuantity.get(i);
+
+                    }
+
+                    objShopingConfirmedBE.setItemSelected(item);
+
+
+                    showDialogPayment(ShopingConfirmed.this);
+                }
 
                 break;
         }
     }
 
-    private class  GetData extends AsyncTask<String,String,String> {
+    private class GetData extends AsyncTask<String,String,String> {
         @Override
         protected void onPreExecute() {
             progressDialog.show();
@@ -211,8 +238,7 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
                 etCity.setText(objHomeScreenBE.getCity());
                 etZip.setText(objHomeScreenBE.getZip());
 
-                etName.setEnabled(false);
-                etEmail.setEnabled(false);
+
 
 
 
@@ -232,11 +258,23 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
         strAddress=etAddress.getText().toString();
         strCity=etCity.getText().toString();
         strZip=etZip.getText().toString();
+        strEmail=etEmail.getText().toString();
+        strName=etName.getText().toString();
 
         if(strPhone.trim().length()==0){
             flag=false;
             etPhone.setError("Required");
 
+        }
+
+        if(strName.trim().length()==0){
+            flag=false;
+            etName.setError("Required");
+        }
+
+        if(strEmail.trim().length()==0){
+            flag=false;
+            etEmail.setError("Required");
         }
 
         if(strAddress.trim().length()==0){
@@ -311,10 +349,12 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
 
                                            if(rbCash.isChecked())
                                            {
-
+                                                objShopingConfirmedBE.setUserPayment("Cash");
+                                               new SendData().execute();
                                                dialog.dismiss();
                                            }else if(rbOnline.isChecked()){
-
+                                               objShopingConfirmedBE.setUserPayment("Online");
+                                               new SendData().execute();
                                                dialog.dismiss();
                                            }
 
@@ -326,6 +366,40 @@ public class ShopingConfirmed extends AppCompatActivity implements View.OnClickL
 
 
         dialog.show();
+    }
+
+    private class SendData extends AsyncTask<String,String,String>{
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+            progressDialog.setCancelable(false);
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String result=objShopingConfirmedBL.setShopData(objShopingConfirmedBE);
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+
+            try{
+                if(Constant.WS_RESPONSE_SUCCESS.equalsIgnoreCase(s)){
+                    startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+                }else
+                    Toast.makeText(getApplicationContext(),"Something went wrong. Please try again",Toast.LENGTH_SHORT).show();
+            }catch (NullPointerException e){
+
+            }catch (Exception e){
+
+            }finally {
+                progressDialog.dismiss();
+            }
+
+        }
     }
 
 

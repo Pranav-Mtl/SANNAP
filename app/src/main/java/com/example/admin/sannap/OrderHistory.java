@@ -1,51 +1,57 @@
 package com.example.admin.sannap;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.example.admin.sannap.Adapter.ShopAdapter;
-import com.example.admin.sannap.Adapter.SubscriptionAdapter;
+import com.example.admin.sannap.Adapter.OrderHistoryAdapter;
+import com.example.admin.sannap.Configuration.Util;
 import com.example.admin.sannap.Constant.Constant;
 
-public class ShopScreen extends AppCompatActivity implements View.OnClickListener {
+public class OrderHistory extends AppCompatActivity {
 
-    GridView list;
-    ShopAdapter objShopAdapter;
+    RecyclerView listBooking;
     ProgressDialog progressDialog;
 
-    RelativeLayout rlCart;
+    int xx,yy;
 
-    TextView tvCart;
+    String userID;
 
+    OrderHistoryAdapter objOrderHistoryAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_screen);
-        initialize();
-        new GetShopData().execute();
+        setContentView(R.layout.activity_order_history);
 
+        initialize();
+
+        if(Util.isInternetConnection(OrderHistory.this));
+            new GetHistory().execute(userID);
     }
 
+
     private void initialize(){
-        list= (GridView) findViewById(R.id.shopping_gridview);
-        tvCart= (TextView) findViewById(R.id.shop_cart_quantity);
-        rlCart= (RelativeLayout) findViewById(R.id.rl_shop_cart);
-        progressDialog=new ProgressDialog(ShopScreen.this);
+        listBooking= (RecyclerView) findViewById(R.id.booking_list);
+
+
+        listBooking.setHasFixedSize(true);
+
+
+        progressDialog=new ProgressDialog(OrderHistory.this);
+
+        final LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listBooking.setLayoutManager(llm);
+
+        userID= Util.getSharedPrefrenceValue(getApplicationContext(), Constant.SP_LOGIN_ID);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,7 +60,32 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        rlCart.setOnClickListener(this);
+        popupSize();
+    }
+
+    private void popupSize(){
+        Display display = getWindowManager().getDefaultDisplay();
+
+        int width = display.getWidth();
+        int height = display.getHeight();
+
+        // System.out.println("width" + width + "height" + height);
+
+        if(width>=1000 && height>=1500){
+            xx=700;
+            yy=650;
+        }
+        else if(width>=700 && height>=1000)
+        {
+            xx=550;
+            yy=500;
+        }
+        else
+        {
+            xx=450;
+            yy=400;
+        }
+
     }
 
     @Override
@@ -74,17 +105,7 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.rl_shop_cart:
-                startActivity(new Intent(getApplicationContext(),Cart.class));
-                break;
-        }
-    }
-
-
-    private class GetShopData extends AsyncTask<String,String,String> {
+    private class GetHistory extends AsyncTask<String,String,String >{
         @Override
         protected void onPreExecute() {
             progressDialog.show();
@@ -94,14 +115,16 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
 
         @Override
         protected String doInBackground(String... params) {
-           objShopAdapter=new ShopAdapter(getApplicationContext(),tvCart);
+            objOrderHistoryAdapter=new OrderHistoryAdapter(getApplicationContext(),params[0]);
             return "";
         }
 
         @Override
         protected void onPostExecute(String s) {
-            try {
-                list.setAdapter(objShopAdapter);
+            try{
+
+                    listBooking.setAdapter(objOrderHistoryAdapter);
+
             }catch (NullPointerException e){
 
             }catch (Exception e){
@@ -111,6 +134,5 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
-
 
 }

@@ -24,9 +24,7 @@ public class SignupBL {
             mContext=context;
             String result = fetRecord();
             String finalvalue = validate(result);
-
         return finalvalue;
-
     }
 
     private String fetRecord() {

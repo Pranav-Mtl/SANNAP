@@ -80,7 +80,7 @@
                 android:visibility="gone"
                 >
 
-        <ImageButton
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_spotting_big"
@@ -105,13 +105,14 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/btn_pill_taken"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     >
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/popup_pill_taken"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,13 +127,14 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/btn_pill_late"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
                     >
-                <ImageButton
+                <ImageView
                     android:id="@+id/popup_pill_late"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -148,13 +150,14 @@
                         />
                     </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/btn_pill_missed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_marginLeft="10dp"
                     >
-                <ImageButton
+                <ImageView
                     android:id="@+id/popup_pill_missed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -170,6 +173,7 @@
                         />
                     </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/btn_pill_double"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -201,13 +205,14 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/btn_ovulation_positive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
                 >
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/popup_test_positive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -223,6 +228,7 @@
                 </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_ovulation_negative"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -230,7 +236,7 @@
                 android:layout_marginLeft="15dp"
                 >
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/popup_test_negative"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -256,13 +262,14 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/btn_sex_protected"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     >
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/popup_protected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -278,6 +285,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/btn_sex_unprotected"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -285,7 +293,7 @@
                     android:layout_marginLeft="15dp"
                     >
 
-                    <ImageButton
+                    <ImageView
                         android:id="@+id/popup_unprotected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
