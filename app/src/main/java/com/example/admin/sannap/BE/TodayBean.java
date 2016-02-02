@@ -7,7 +7,23 @@ import java.io.Serializable;
  */
 public class TodayBean implements Serializable {
 
-    private String spotting,cervical,temperature,ovulation,body,mood,notes,sexual,pill;
+    private String spotting,cervical,temperature,ovulation,body,mood,notes,sexual,pill,userID,cycleID;
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getCycleID() {
+        return cycleID;
+    }
+
+    public void setCycleID(String cycleID) {
+        this.cycleID = cycleID;
+    }
 
     public String getSpotting() {
         return spotting;

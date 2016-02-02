@@ -141,9 +141,15 @@
         <activity
             android:name=".OrderHistory"
             android:label="" />
-        <activity android:name=".TodayNotes"
+        <activity
+            android:name=".TodayNotes"
+            android:label="" />
+        <activity
+            android:name=".TodayPeriodLog"
+            android:label="" />
+        <activity android:name=".PeriodLogDetail"
             android:label=""
-            ></activity>
+            />
     </application>
 
 </manifest>

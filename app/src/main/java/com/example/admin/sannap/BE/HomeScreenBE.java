@@ -5,11 +5,20 @@ package com.example.admin.sannap.BE;
  */
 public class HomeScreenBE {
 
-    private int cycleLength,period,periodBleak,fertile,afterFertile,pms;
+    private int cycleLength,period,periodBleak,fertile,afterFertile,pms,cycleID;
     private int nextCycleLength,nextPeriod,nextPeriodBleak,nextFertile,nextAfterFertile,nextPms;
 
     private String name,email,age,phone,address,city,zip,subscribe;
     private String firstDay,nextFirstDay;
+
+
+    public int getCycleID() {
+        return cycleID;
+    }
+
+    public void setCycleID(int cycleID) {
+        this.cycleID = cycleID;
+    }
 
     public String getPhone() {
         return phone;

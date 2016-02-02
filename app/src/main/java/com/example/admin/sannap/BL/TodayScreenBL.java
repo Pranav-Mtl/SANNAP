@@ -23,10 +23,13 @@ public class TodayScreenBL {
 
     private String callWS() {
         String text = null;
+
+        //http://appslure.com/sannap/android/cycle_data.php?user_id=2&cycle_id=1&spotting=Y&cervical_mucus=gg&body_temp=65.3&ovulation_test=fertile&body=888&mood=22,ff,gghf,ghh&notes=test&sexual_activity=protected&pill_intake=Y
+
         try
         {
-            String URL="";
-            text= RestFullWS.serverRequest(URL, Constant.WS_SUBSCRIPTION_DETAIL);
+            String URL="user_id="+objTodayBean.getUserID()+"&cycle_id="+objTodayBean.getCycleID()+"&spotting="+objTodayBean.getSpotting()+"&cervical_mucus="+objTodayBean.getCervical()+"&body_temp="+objTodayBean.getTemperature()+"&ovulation_test="+objTodayBean.getOvulation()+"&body="+objTodayBean.getBody()+"&mood="+objTodayBean.getMood()+"&notes="+objTodayBean.getNotes()+"&sexual_activity="+objTodayBean.getSexual()+"&pill_intake="+objTodayBean.getPill();
+            text= RestFullWS.serverRequest(URL, Constant.WS_TODAY);
         }
         catch (Exception e)
         {

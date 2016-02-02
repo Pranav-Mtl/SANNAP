@@ -32,6 +32,7 @@ public class SubscriptionAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         if(Constant.modelName==null)
             return 0;
         return Constant.modelName.length;
@@ -62,7 +63,6 @@ public class SubscriptionAdapter extends BaseAdapter {
         {
             gridView=new View(context);
             gridView=layoutInflater.inflate(R.layout.subscription_adapter,null);
-
             tvName= (TextView) gridView.findViewById(R.id.subscription_model_name);
             tvPrice= (TextView) gridView.findViewById(R.id.subscription_model_price);
             tvOriginal= (TextView) gridView.findViewById(R.id.subscription_model_original);

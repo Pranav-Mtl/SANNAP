@@ -31,7 +31,7 @@ import com.example.admin.sannap.Constant.Constant;
 
 public class TodayScreen extends AppCompatActivity implements View.OnClickListener {
 
-    RelativeLayout btnNotes,btnBody,btnMood,btnTemperature,btnCervical,btnSpotting,btnOvulation,btnSexual,btnPill;
+    RelativeLayout btnNotes,btnBody,btnMood,btnTemperature,btnCervical,btnSpotting,btnOvulation,btnSexual,btnPill,btnPeriodLog;
 
     int xx,yy;
 
@@ -41,6 +41,7 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
     ImageButton btnDone;
 
     String userID;
+    String cycleID;
 
     ProgressDialog progressDialog;
 
@@ -54,10 +55,12 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 Log.d("Today selection",objTodayBean.getBody()+"\n"+objTodayBean.getNotes()+"\n"+objTodayBean.getCervical()+"\n"+objTodayBean.getOvulation()+"\n"+objTodayBean.getPill()+"\n"+objTodayBean.getSexual()+"\n"+objTodayBean.getSpotting()+"\n"+objTodayBean.getTemperature());
+                if (Util.isInternetConnection(TodayScreen.this))
+                    new SendLog().execute();
+
             }
         });
     }
-
 
     private void initialize() {
 
@@ -71,8 +74,10 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
         btnPill= (RelativeLayout) findViewById(R.id.today_btn_pill);
         btnDone= (ImageButton) findViewById(R.id.today_Screen_ok);
         btnNotes= (RelativeLayout) findViewById(R.id.today_btn_notes);
+        btnPeriodLog= (RelativeLayout) findViewById(R.id.today_btn_period_log);
 
         userID= Util.getSharedPrefrenceValue(TodayScreen.this, Constant.SP_LOGIN_ID);
+        cycleID=getIntent().getStringExtra("CycleID");
         progressDialog=new ProgressDialog(TodayScreen.this);
 
 
@@ -85,9 +90,22 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
         btnSexual.setOnClickListener(this);
         btnPill.setOnClickListener(this);
         btnNotes.setOnClickListener(this);
+        btnPeriodLog.setOnClickListener(this);
 
         objTodayBean=new TodayBean();
         objTodayScreenBL=new TodayScreenBL();
+
+        objTodayBean.setUserID(userID);
+        objTodayBean.setCycleID(cycleID);
+        objTodayBean.setNotes("");
+        objTodayBean.setOvulation("");
+        objTodayBean.setMood("");
+        objTodayBean.setBody("");
+        objTodayBean.setCervical("");
+        objTodayBean.setPill("");
+        objTodayBean.setSexual("");
+        objTodayBean.setSpotting("No");
+        objTodayBean.setTemperature("");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -173,6 +191,9 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.today_btn_notes:
                 startActivityForResult(new Intent(getApplicationContext(), TodayNotes.class).putExtra("TodayBean", objTodayBean), 1);
+                break;
+            case R.id.today_btn_period_log:
+                startActivityForResult(new Intent(getApplicationContext(), TodayPeriodLog.class).putExtra("TodayBean", objTodayBean), 1);
                 break;
 
         }
@@ -302,7 +323,7 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Spotting",Toast.LENGTH_SHORT).show();
-                objTodayBean.setSpotting("Spotting");
+                objTodayBean.setSpotting("Yes");
             }
         });
 
@@ -355,10 +376,11 @@ public class TodayScreen extends AppCompatActivity implements View.OnClickListen
         protected void onPostExecute(String s) {
             try{
                 if(Constant.WS_RESPONSE_SUCCESS.equalsIgnoreCase(s)){
-
+                    Toast.makeText(getApplicationContext(),"Period Log Saved",Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             }catch (NullPointerException e){
-
+                e.printStackTrace();
             }catch (Exception e){
 
             }finally {

@@ -34,9 +34,18 @@ public class QuestionSeven extends Fragment {
 
         objSignupBE = (SignupBE) getArguments().getSerializable("SignupBE");
 
-        Button noBtn= (Button) view.findViewById(R.id.seven_fragment_noBtn);
+        ImageButton noBtn= (ImageButton) view.findViewById(R.id.seven_fragment_noBtn);
 
-        Button yesBtn= (Button) view.findViewById(R.id.seven_fragment_yesBtn);
+        ImageButton yesBtn= (ImageButton) view.findViewById(R.id.seven_fragment_yesBtn);
+
+        ImageButton back= (ImageButton) view.findViewById(R.id.back_btn);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
 
         noBtn.setOnClickListener(new View.OnClickListener() {

@@ -1,16 +1,41 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/first_fragment"
+    android:background="@color/white"
     tools:context="com.example.admin.sannap.QuestionOne">
 
     <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/Toolbar_Theme"
+        android:layout_gravity="center"
+        android:elevation="8dp"
+        android:minHeight="?attr/actionBarSize">
+
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_question_one_back"
+            />
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
+        android:layout_below="@id/toolbar"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#e53939"
         android:orientation="vertical">
 
 
@@ -18,115 +43,111 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:background="@color/question_one"
 
             >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/question_one_img"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:textSize="@dimen/bigest_text_size"
+                android:textStyle="italic"
+                android:padding="5dp"
+
+                android:textColor="#ffffff"
+                android:text="Do you know about how \nlong your period lasts?"/>
+
+
 
 
 
         </RelativeLayout>
 
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="PERIOD"
-            android:layout_marginTop="30dp"
-            android:textColor="#ffffff"
-             android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="@dimen/big_text_size"/>
-
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/big_text_size"
-            android:textStyle="italic"
-            android:padding="5dp"
-
-            android:layout_marginTop="30dp"
-            android:textColor="#ffffff"
-            android:text="Do you know about how long your period lasts?"/>
-
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:gravity="center_horizontal">
+            android:background="@color/question_gray"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/big_circle"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/question_one_img"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="PERIOD"
+                android:textColor="@color/question_one"
+                android:textStyle="bold"
+                />
 
 
         </LinearLayout>
 
-            <RelativeLayout
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp">
+                android:gravity="center"
+                android:layout_marginTop="70dp">
 
-                <Button
+                <ImageButton
                     android:id="@+id/qfirst_nobtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:text="No"
-                    android:textColor="@color/red"
-                    android:background="@drawable/customized_button"/>
+                    android:background="@drawable/ic_question_one_cross"/>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
 
-
-                <Button
+                <ImageButton
                     android:id="@+id/qfirst_yesbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_alignParentRight="true"
-                    android:text="Yes"
-                    android:textColor="@color/red"
-                    android:layout_marginRight="25dp"
-                    android:background="@drawable/customized_button"/>
+                    android:background="@drawable/ic_question_one_checked"/>
 
-            </RelativeLayout>
-
+            </LinearLayout>
 
 
 
@@ -134,7 +155,79 @@
     </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dot_question_one"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_ones"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_ones"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_ones"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_ones"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dot_question_ones"/>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 
 </FrameLayout>

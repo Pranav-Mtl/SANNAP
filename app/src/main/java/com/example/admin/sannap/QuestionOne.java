@@ -33,10 +33,20 @@ public class QuestionOne extends Fragment {
 
         View view=inflater.inflate(R.layout.fragment_question_one, container, false);
 
+
         objSignupBE=new SignupBE();
 
-        final Button noBtn= (Button) view.findViewById(R.id.qfirst_nobtn);
-        Button yesBtn= (Button) view.findViewById(R.id.qfirst_yesbtn);
+        final ImageButton noBtn= (ImageButton) view.findViewById(R.id.qfirst_nobtn);
+        ImageButton yesBtn= (ImageButton) view.findViewById(R.id.qfirst_yesbtn);
+
+        ImageButton back= (ImageButton) view.findViewById(R.id.back_btn);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
 
 

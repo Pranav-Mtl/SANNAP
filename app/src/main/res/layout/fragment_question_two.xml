@@ -1,138 +1,233 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/second_fragment"
-    tools:context="com.example.admin.sannap.QuestionTwo">
+    android:background="@color/white"
+    tools:context="com.example.admin.sannap.QuestionOne">
 
     <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:background="#b362a7">
-
-
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="80dp">
-
-
-
-    <ImageView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/question_sec_img"/>
-
-
-
-
-</RelativeLayout>
-
-
-        <TextView
-            android:layout_width="fill_parent"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="30dp"
-            android:textStyle="bold"
-            android:textSize="@dimen/big_text_size"
-            android:text="CYCLE"/>
+            app:theme="@style/Toolbar_Theme"
+            android:layout_gravity="center"
+            android:elevation="8dp"
+            android:minHeight="?attr/actionBarSize">
 
 
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_question_two_back"
+                />
 
-        <TextView
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_below="@id/toolbar"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/big_text_size"
-            android:textStyle="italic"
-            android:layout_marginTop="30dp"
-            android:padding="5dp"
-            android:text="Do you know about how long your cycle lasts?"/>
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/question_two"
+
+                >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:textSize="@dimen/bigest_text_size"
+                    android:textStyle="italic"
+                    android:padding="5dp"
+
+                    android:textColor="#ffffff"
+                    android:text="Do you know about how \nlong your cycle lasts?"/>
+
+
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/question_gray"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/question_two_img"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="CYCLE LENGTH"
+                    android:textColor="@color/question_two"
+                    android:textStyle="bold"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="70dp">
+
+                <ImageButton
+                    android:id="@+id/second_fragment_nobtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_question_two_cross"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_two_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_two_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_two_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_two_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/question_two_dashed"
+                    android:layout_marginLeft="5dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/second_fragment_yesBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_question_two_checked"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:gravity="center_horizontal">
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/small_circle"/>
+                android:background="@drawable/dot_question_twos"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/big_circle"/>
+                android:background="@drawable/question_two_dashed"
+
+                />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
+
+                android:background="@drawable/dot_question_two"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
+                android:background="@drawable/question_two_dashed"
+
+                />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
+
+                android:background="@drawable/dot_question_twos"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/small_circle"/>
+                android:background="@drawable/question_two_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_twos"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_two_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/dot_question_twos"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/question_two_dashed"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dot_question_twos"/>
+
 
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
 
-            <Button
-                android:id="@+id/second_fragment_nobtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:text="No"
-                android:textColor="@color/light_pink"
-                android:background="@drawable/customized_button"/>
-
-
-
-            <Button
-                android:id="@+id/second_fragment_yesBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_alignParentRight="true"
-                android:text="Yes"
-                android:textColor="@color/light_pink"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/customized_button"/>
-
-        </RelativeLayout>
-
-
-
-
-
-    </LinearLayout>
-
+    </RelativeLayout>
 
 
 </FrameLayout>

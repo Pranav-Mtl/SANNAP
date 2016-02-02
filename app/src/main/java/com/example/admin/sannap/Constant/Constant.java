@@ -39,7 +39,9 @@ public class Constant {
     public static String WS_SUBSCRIPTION_CHECKOUT="user_subscribe";
     public static String WS_SHOPING_ORDER="order";
     public static String WS_ORDER_HISTORY="order_user_details";
-    public static String WS_TODAY="order_user_details";
+    public static String WS_TODAY="cycle_data";
+    public static String WS_CYCLE_LOG="user_cycle_data";
+
 
     public static String  TITLES[]={"Order History","Reminders","Subscription"};
     public static int ICONS[]={R.drawable.ic_order_history,R.drawable.ic_reminders,R.drawable.ic_subscription};
@@ -79,6 +81,20 @@ public class Constant {
     public static String orderStatus[];
     public static String orderItem[];
     public static String orderDate[];
+
+
+    /* */
+    public static String cycle_id[];
+    public static String spotting[];
+    public static String cervical_mucus[];
+    public static String body_temp[];
+    public static String ovulation_test[];
+    public static String body[];
+    public static String mood[];
+    public static String notes[];
+    public static String sexual_activity[];
+    public static String pill_intake[];
+    public static String cycleDate[];
 
 
     /* SUBSCRIPTION DETAIL*/

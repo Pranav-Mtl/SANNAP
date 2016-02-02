@@ -82,24 +82,19 @@ public class SignUpScreen extends AppCompatActivity {
                 confirmPaswd=confirmPaswdEdt.getText().toString();
                 Strname=nameEdt.getText().toString();
 
-               if(checkAllField())
-               {
-                   if(password.equals(confirmPaswd)) {
-                       objSignupBE.setEmail(email);
-                       objSignupBE.setPassword(password);
-                       objSignupBE.setName(Strname);
-                       objSignupBE.setGcmID("");
-                       objSignupBE.setDeviceID("");
+               if(checkAllField()) {
 
-                       new SetData().execute();
+                   objSignupBE.setEmail(email);
+                   objSignupBE.setPassword(password);
+                   objSignupBE.setName(Strname);
+                   objSignupBE.setGcmID("");
+                   objSignupBE.setDeviceID("");
+
+                   new SetData().execute();
                        /*Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
                        startActivity(intent);*/
-                   }
 
-                   else
-                   {
-                       Toast.makeText(getApplicationContext(),"password doest not match",Toast.LENGTH_SHORT).show();
-                   }
+
 
                }
 
@@ -111,6 +106,7 @@ public class SignUpScreen extends AppCompatActivity {
 
     public boolean checkAllField()
     {
+        flag=true;
         if (email.length()==0)
         {
             emailEdt.setError("Mandatory Field");
@@ -131,12 +127,6 @@ public class SignUpScreen extends AppCompatActivity {
         }
 
 
-
-        if(confirmPaswd.length()==0)
-        {
-            confirmPaswdEdt.setError("Mandatory Field");
-            flag=false;
-        }
 
 
         if(!checkEmail(email))

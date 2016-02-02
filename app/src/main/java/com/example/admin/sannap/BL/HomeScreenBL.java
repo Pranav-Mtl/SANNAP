@@ -102,6 +102,7 @@ public class HomeScreenBL {
             Object obj =jsonP.parse(strValue);
             JSONArray jsonArrayObject = (JSONArray)obj;
             JSONObject jsonObject=(JSONObject)jsonP.parse(jsonArrayObject.get(0).toString());
+            objHomeScreenBE.setCycleID(Integer.valueOf(jsonObject.get("mycycle").toString()));
             objHomeScreenBE.setPeriod(Integer.valueOf(jsonObject.get("period").toString()));
             objHomeScreenBE.setPeriodBleak(Integer.valueOf(jsonObject.get("bleak_period").toString()));
             objHomeScreenBE.setFertile(Integer.valueOf(jsonObject.get("fertile_period").toString()));
@@ -109,10 +110,6 @@ public class HomeScreenBL {
             objHomeScreenBE.setPms(Integer.valueOf(jsonObject.get("pms").toString()));
             objHomeScreenBE.setCycleLength(Integer.valueOf(jsonObject.get("cycle_length").toString()));
             objHomeScreenBE.setFirstDay(jsonObject.get("first_day").toString());
-
-
-
-
 
 
         } catch (Exception e) {

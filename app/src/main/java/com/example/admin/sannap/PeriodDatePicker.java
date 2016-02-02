@@ -20,6 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.admin.sannap.BE.SignupBE;
+import com.example.admin.sannap.Constant.Constant;
+import com.imanoweb.calendarview.CalendarListener;
+import com.imanoweb.calendarview.CustomCalendarView;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.text.ParseException;
@@ -38,13 +41,16 @@ public class PeriodDatePicker extends AppCompatActivity implements View.OnClickL
 
     static final int TIME_DIALOG_ID = 999;
 
-    MaterialCalendarView mt;
+    CustomCalendarView calendarView;
+    Calendar currentCalendar;
 
     ImageButton btnOK;
 
     Intent intent;
 
     SignupBE objSignupBE;
+
+    String selectedDate;
 
 
 
@@ -55,23 +61,59 @@ public class PeriodDatePicker extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_period_date_picker);
         initialize();
 
+        calendarView.setCalendarListener(new CalendarListener() {
+            @Override
+            public void onDateSelected(Date date) {
+                try {
+                    SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                     selectedDate = df.format(date);
+
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onMonthChanged(Date date) {
+                SimpleDateFormat df = new SimpleDateFormat("MM-yyyy");
+                //Toast.makeText(TodayPeriodLog.this, df.format(date), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
     }
 
     private void initialize(){
-        mt= (MaterialCalendarView) findViewById(R.id.calendarView);
 
         btnOK= (ImageButton) findViewById(R.id.btn_period_date);
 
         intent=getIntent();
         objSignupBE= (SignupBE) intent.getSerializableExtra("SignupBE");
 
+        calendarView = (CustomCalendarView) findViewById(R.id.calendar_view);
+
+//Initialize calendar with date
+        currentCalendar = Calendar.getInstance(Locale.getDefault());
+
+//Show Monday as first date of week
+        calendarView.setFirstDayOfWeek(Calendar.MONDAY);
+
+
+
+//Show/hide overflow days of a month
+        calendarView.setShowOverflowDate(false);
+
+//call refreshCalendar to update calendar the view
+        calendarView.refreshCalendar(currentCalendar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         btnOK.setOnClickListener(this);
     }
 
@@ -87,7 +129,7 @@ public class PeriodDatePicker extends AppCompatActivity implements View.OnClickL
         if (id == android.R.id.home) {
 
 
-            Toast.makeText(PeriodDatePicker.this,mt.getSelectedDate()+"", Toast.LENGTH_SHORT).show();
+
 
             onBackPressed();
             return true;
@@ -99,8 +141,8 @@ public class PeriodDatePicker extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_period_date:
-                if(mt.getSelectedDate()!=null){
-                    objSignupBE.setPeriodDate(mt.getSelectedDate().toString().replace("[", "").replace("]", "").replace("CalendarDay","").replace("{", "").replace("}",""));
+                if(selectedDate!=null){
+                    objSignupBE.setPeriodDate(selectedDate);
                     intent.putExtra("SignupBE",objSignupBE);
                     setResult(RESULT_OK,intent);
                     finish();

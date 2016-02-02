@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/red"
+    android:background="@color/white"
     tools:context="com.example.admin.sannap.PeriodDatePicker">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +13,7 @@
         app:theme="@style/Toolbar_Theme"
         android:layout_gravity="center"
         android:elevation="8dp"
-        android:background="@color/red"
+        android:background="@color/question_three"
         android:minHeight="?attr/actionBarSize">
 
 
@@ -41,23 +41,20 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         >
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:mcv_showOtherDates="all"
-        app:mcv_selectionColor="@color/light_pink"
-        app:mcv_dateTextAppearance="@style/Toolbar_Theme"
-        app:mcv_weekDayTextAppearance="@style/Toolbar_Theme"
-        app:mcv_headerTextAppearance="@style/Toolbar_Theme"
-        app:mcv_arrowColor="@color/white"
-        />
+        <com.imanoweb.calendarview.CustomCalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:currentDayOfMonthColor="@color/question_three"
+            app:selectedDayBackgroundColor="@color/question_three"
+            android:background="#ffffff">
+            </com.imanoweb.calendarview.CustomCalendarView>
         <ImageButton
             android:id="@+id/btn_period_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_button_customized"/>
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_question_three_checked"/>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>

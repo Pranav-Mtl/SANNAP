@@ -7,13 +7,9 @@ public class ShopingConfirmedBE {
 
     private String userID,itemSelected,basePrice,tax,grandTotal,userMobile,userAddress,userCity,userZip,userPayment,userName,userEmail,discountedPrice,promocode;
 
-    public String getDiscountedPrice() {
-        return discountedPrice;
-    }
+    public String getDiscountedPrice() { return discountedPrice; }
 
-    public void setDiscountedPrice(String discountedPrice) {
-        this.discountedPrice = discountedPrice;
-    }
+    public void setDiscountedPrice(String discountedPrice) { this.discountedPrice = discountedPrice; }
 
     public String getPromocode() {
         return promocode;

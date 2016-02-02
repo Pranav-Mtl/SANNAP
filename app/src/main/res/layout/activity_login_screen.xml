@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_image">
+    android:background="@drawable/splash_bg">
 
 
 
@@ -31,7 +31,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/logo_image"/>
+                    android:background="@drawable/ic_logo_signup"/>
 
 
 
@@ -42,12 +42,14 @@
                     android:layout_marginTop="45dp"
                     android:hint="Email address"
                     android:drawablePadding="5dp"
-                    android:textColorHint="#ffffff"
+                    android:textColorHint="@color/textSecondaryColor"
                     android:singleLine="true"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
+                    android:backgroundTint="@color/colorPrimary"
                     android:drawableLeft="@drawable/login_email"
-                    android:background="@android:color/transparent"/>
+
+                    />
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
@@ -62,13 +64,14 @@
                     android:layout_marginTop="25dp"
                     android:hint="Password"
                     android:drawablePadding="5dp"
-                    android:textColorHint="#ffffff"
+                    android:textColorHint="@color/textSecondaryColor"
                     android:singleLine="true"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
                     android:inputType="textPassword"
+                    android:backgroundTint="@color/colorPrimary"
                     android:drawableLeft="@drawable/login_password"
-                    android:background="@android:color/transparent"/>
+                    />
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
@@ -81,11 +84,11 @@
                     android:id="@+id/login_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/customized_button"
+                    android:background="@drawable/customized_color_button"
                     android:layout_marginTop="40dp"
                     android:text="LOGIN"
                     android:minHeight="@dimen/button_size"
-                    android:textColor="@color/button_text_color"
+                    android:textColor="@color/white"
                     />
 
                <!-- <Button

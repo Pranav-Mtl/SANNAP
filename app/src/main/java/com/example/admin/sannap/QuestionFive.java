@@ -31,9 +31,18 @@ public class QuestionFive extends Fragment {
         View view= inflater.inflate(R.layout.fragment_question_five, container, false);
 
         objSignupBE = (SignupBE) getArguments().getSerializable("SignupBE");
-        Button noBtn= (Button) view.findViewById(R.id.fifth_fragment_noBtn);
+        ImageButton noBtn= (ImageButton) view.findViewById(R.id.fifth_fragment_noBtn);
 
-        Button yesBtn= (Button) view.findViewById(R.id.fifth_fragment_yesBtn);
+        ImageButton yesBtn= (ImageButton) view.findViewById(R.id.fifth_fragment_yesBtn);
+
+        ImageButton back= (ImageButton) view.findViewById(R.id.back_btn);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
 
         noBtn.setOnClickListener(new View.OnClickListener() {

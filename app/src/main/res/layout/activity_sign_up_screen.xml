@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_image">
+    android:background="@drawable/splash_bg">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/logo_image"
+                android:background="@drawable/ic_logo_signup"
                 android:layout_marginTop="20dp"
                 />
 
@@ -38,11 +38,11 @@
                 android:id="@+id/name"
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:hint="Name"
                 android:drawablePadding="5dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColorHint="@color/textSecondaryColor"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:imeOptions="actionNext"
                 android:drawableLeft="@drawable/ic_user"
@@ -50,7 +50,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#ffffff"/>
+                android:background="@color/colorPrimary"/>
 
             <EditText
                 android:id="@+id/email"
@@ -59,17 +59,18 @@
                 android:layout_marginTop="25dp"
                 android:hint="Email address"
                 android:drawablePadding="5dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColorHint="@color/textSecondaryColor"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:inputType="textEmailAddress"
                 android:imeOptions="actionNext"
+                android:backgroundTint="@color/colorPrimary"
                 android:drawableLeft="@drawable/login_email"
                 android:background="@android:color/transparent"/>
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#ffffff"/>
+                android:background="@color/colorPrimary"/>
 
 
 
@@ -80,8 +81,8 @@
                 android:layout_marginTop="25dp"
                 android:hint="Password"
                 android:drawablePadding="5dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColorHint="@color/textSecondaryColor"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:inputType="textPassword"
                 android:imeOptions="actionNext"
@@ -90,7 +91,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#ffffff"/>
+                android:background="@color/colorPrimary"/>
 
 
 
@@ -99,19 +100,19 @@
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="25dp"
-                android:hint="Confirm password"
+                android:hint="Mobile Number"
                 android:drawablePadding="5dp"
-                android:textColorHint="#ffffff"
-                android:textColor="#ffffff"
+                android:textColorHint="@color/textSecondaryColor"
+                android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:drawableLeft="@drawable/login_password"
                 android:imeOptions="actionDone"
                 android:background="@android:color/transparent"/>
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:background="#ffffff"/>
+                android:background="@color/colorPrimary"/>
 
 
 
@@ -120,10 +121,10 @@
                 android:id="@+id/signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/customized_button"
+                android:background="@drawable/customized_color_button"
                 android:layout_marginTop="30dp"
                 android:text="SIGNUP"
-                android:textColor="@color/button_text_color"
+                android:textColor="@color/white"
                 android:minHeight="@dimen/button_size"
                 />
 
@@ -131,10 +132,10 @@
                 android:id="@+id/login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/customized_button"
+                android:background="@drawable/customized_color_button"
                 android:layout_marginTop="20dp"
                 android:text="Already Registered? login"
-                android:textColor="@color/button_text_color"
+                android:textColor="@color/white"
                 android:minHeight="@dimen/button_size"
                 />
 

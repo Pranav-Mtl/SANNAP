@@ -63,6 +63,7 @@
             android:textSize="@dimen/text_size"
             />
         <RelativeLayout
+            android:id="@+id/today_btn_period_log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -275,7 +276,6 @@
                 android:layout_toRightOf="@id/iv_mood"
                 />
             <ImageView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

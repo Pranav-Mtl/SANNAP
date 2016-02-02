@@ -185,7 +185,7 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
         btnStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), TodayScreen.class));
+                startActivity(new Intent(getApplicationContext(), TodayScreen.class).putExtra("CycleID",objHomeScreenBE.getCycleID()+""));
             }
         });
 

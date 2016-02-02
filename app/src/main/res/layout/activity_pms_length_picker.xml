@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/light_green"
+    android:background="@color/white"
     tools:context="com.example.admin.sannap.PmsLengthPicker">
 
     <android.support.v7.widget.Toolbar
@@ -14,7 +14,7 @@
         app:theme="@style/Toolbar_Theme"
         android:layout_gravity="center"
         android:elevation="8dp"
-        android:background="@color/light_green"
+        android:background="@color/question_six"
         android:minHeight="?attr/actionBarSize">
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/big_text_size"
-            android:textColor="#ffffff"
+            android:textColor="@color/question_six"
             android:textStyle="italic"
             android:text="Pick a PMS length"/>
 
@@ -61,6 +61,7 @@
                 android:id="@+id/pms_picker"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/question_six"
 
                 >
             </NumberPicker>
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="days"
-                android:textColor="#ffffff"
+                android:textColor="@color/question_six"
                 android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
@@ -79,7 +80,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:background="@drawable/round_button_customized"/>
+            android:layout_marginLeft="-15dp"
+            android:background="@drawable/ic_question_six_checked"/>
 
     </LinearLayout>
 </RelativeLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/light_pink"
+    android:background="@color/white"
     tools:context="com.example.admin.sannap.CycleLengthPicker">
 
     <android.support.v7.widget.Toolbar
@@ -14,7 +14,7 @@
         app:theme="@style/Toolbar_Theme"
         android:layout_gravity="center"
         android:elevation="8dp"
-        android:background="@color/light_pink"
+        android:background="@color/question_two"
         android:minHeight="?attr/actionBarSize">
 
 
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/big_text_size"
-            android:textColor="#ffffff"
+            android:textColor="@color/question_two"
             android:textStyle="italic"
             android:text="Pick a cycle length"/>
 
@@ -62,6 +62,7 @@
                 android:id="@+id/cycle_picker"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/question_two"
                 >
             </NumberPicker>
             <TextView
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="days"
-                android:textColor="#ffffff"
+                android:textColor="@color/question_two"
                 android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
@@ -79,7 +80,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:background="@drawable/round_button_customized"/>
+            android:layout_marginLeft="-15dp"
+            android:background="@drawable/ic_question_two_checked"/>
 
     </LinearLayout>
 </RelativeLayout>
