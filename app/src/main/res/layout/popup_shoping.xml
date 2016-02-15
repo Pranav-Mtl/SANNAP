@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/referral_popup_bg"
+        android:background="@drawable/ic_popup_home"
         >
 
 
@@ -17,19 +17,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-
                 >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_popup_image"
+                    />
                 <Button
                     android:id="@+id/popup_cancel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/customized_color_button"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_popup_box"
                     android:textColor="@color/white"
                     android:textAllCaps="true"
                     android:textSize="@dimen/small_text_size"
                     android:padding="10dp"
                     android:minHeight="@dimen/min_button_size"
-                    android:text="Make my box"
+                    android:text=""
                     />
 
                 <Button
@@ -37,13 +43,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                    android:layout_marginTop="20dp"
-                    android:background="@drawable/customized_color_button"
+                    android:background="@drawable/ic_popup_shop"
                     android:textColor="@color/white"
                     android:textAllCaps="true"
                     android:textSize="@dimen/small_text_size"
                     android:padding="10dp"
                     android:minHeight="@dimen/min_button_size"
-                    android:text="Shop in shop"
+                    android:text=""
                     />
             </LinearLayout>
 

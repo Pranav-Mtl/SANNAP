@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:gravity="center"
     android:background="@color/white"
-    android:padding="10dp"
+    android:layout_margin="20dp"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="30dp"
+        android:background="@color/red"
+        android:layout_height="wrap_content">
 
 <TextView
     android:id="@+id/subscription_model_name"
@@ -14,33 +22,21 @@
     android:layout_height="wrap_content"
     android:paddingBottom="5dp"
     android:textStyle="bold"
+    android:text="textHere"
     android:textAllCaps="true"
-    android:textColor="@color/textColorDark"
+    android:textColor="@color/white"
     />
 
     <TextView
         android:id="@+id/subscription_model_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="@dimen/small_text_size"
-        android:textColor="@color/textColorDark"
+        android:paddingBottom="5dp"
+        android:textStyle="bold"
+        android:text="textHere"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         />
 
-    <TextView
-        android:id="@+id/subscription_model_original"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="@dimen/small_text_size"
-        android:textColor="@color/textColorDark"
-        />
-
-
-
-
-
-
-
-
+    </LinearLayout>
 </LinearLayout>

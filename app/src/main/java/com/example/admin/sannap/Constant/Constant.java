@@ -29,11 +29,13 @@ public class Constant {
     public static String WS_RESPONSE_FAILURE="failure";
 
     public static String SP_LOGIN_ID="login";
-
+//http://appslure.com/sannap/android/product_detail.php?category_id=1
     public static String WS_SIGNUP="signup.php";
     public static String WS_SIGNIN="login.php";
     public static String WS_HOMESCREEN="user_data";
+    public static String WS_SUBMENU="product_detail";
     public static String WS_SUBSCRIPTION="subscription_list";
+    public static String WS_PRODUCT="product_categories";
     public static String WS_SHOP="item_list";
     public static String WS_SUBSCRIPTION_DETAIL="subscription_detail";
     public static String WS_SUBSCRIPTION_CHECKOUT="user_subscribe";
@@ -41,6 +43,10 @@ public class Constant {
     public static String WS_ORDER_HISTORY="order_user_details";
     public static String WS_TODAY="cycle_data";
     public static String WS_CYCLE_LOG="user_cycle_data";
+
+
+    public static String preferenceCurrentValue="0";
+    public static String preferenceTotalValue="00";
 
 
     public static String  TITLES[]={"Order History","Reminders","Subscription"};
@@ -63,6 +69,18 @@ public class Constant {
     public static String modelName[];
     public static String modelPrice[];
     public static String modelOriginal[];
+
+    //product detail
+    public static String productImg[];
+    public static String productText[];
+    public static String productId[];
+
+    //submenu
+
+    public static String brandName[];
+    public static String size[];
+
+
 
      /* SHOP LIST */
 

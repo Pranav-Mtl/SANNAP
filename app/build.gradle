@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.admin.sannap"
+        applicationId "com.healthcare.sannap"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -21,6 +21,10 @@ android {
 
 repositories {
     maven { url "https://jitpack.io" }
+
+        mavenCentral()
+
+
 }
 
 dependencies {
@@ -32,7 +36,10 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.squareup.picasso:picasso:2.3.2'
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.github.npanigrahy:Custom-Calendar-View:v1.0'
     compile files('libs/json-simple-1.1.jar')
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
+    apply plugin: 'com.google.gms.google-services'
+    compile 'com.google.android.gms:play-services-auth:8.3.0'
+    compile project(':circleimageview')
 }

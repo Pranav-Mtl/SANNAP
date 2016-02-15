@@ -14,8 +14,10 @@ import org.json.simple.parser.JSONParser;
 public class SubscriptionBL
 {
 
-    public String getSubscriptionData() {
+    String userId;
+    public String getSubscriptionData(String userId) {
 
+        this.userId=userId;
         String result = callWS();
          validate(result);
         return "";
@@ -25,7 +27,7 @@ public class SubscriptionBL
         String text = null;
 
         try
-        {  String URL="";
+        {  String URL="user_id="+userId;
             text= RestFullWS.serverRequest(URL, Constant.WS_SUBSCRIPTION);
 
         }
@@ -51,8 +53,7 @@ public class SubscriptionBL
             for (int i=0;i<jsonArrayObject.size();i++) {
                 JSONObject jsonObject = (JSONObject) jsonP.parse(jsonArrayObject.get(i).toString());
                 Constant.modelID[i]=jsonObject.get("model_id").toString();
-                Constant.modelName[i]=jsonObject.get("model_name").toString();
-                Constant.modelOriginal[i]=jsonObject.get("price").toString();
+                Constant.modelName[i]=jsonObject.get("item_allowed").toString();
                 Constant.modelPrice[i]=jsonObject.get("discount_price").toString();
             }
 

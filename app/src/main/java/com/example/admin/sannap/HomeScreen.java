@@ -40,8 +40,7 @@ import com.example.admin.sannap.Configuration.RecyclerItemClickListener;
 import com.example.admin.sannap.Configuration.Util;
 import com.example.admin.sannap.Constant.Constant;
 import com.example.admin.sannap.circularseekbar.CircularSeekBar;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.text.DateFormat;
@@ -100,7 +99,7 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
         setContentView(R.layout.activity_home_screen);
 
         shop = (ImageView) findViewById(R.id.shop_btn);
-        subscription = (ImageView) findViewById(R.id.subscription_btn);
+        subscription = (ImageView) findViewById(R.id.subscription_doc);
         //cs= (CircularSlider) findViewById(R.id.circular);
         tvPosition = (TextView) findViewById(R.id.circular_position);
         tvPeriod = (TextView) findViewById(R.id.circular_period);
@@ -212,7 +211,7 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
     }
 
     private void initialize() {
@@ -323,7 +322,7 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
                 seekbar.setMax(objHomeScreenBE.getCycleLength());
 
                 if (objHomeScreenBE.getSubscribe().equalsIgnoreCase("Y")) {
-                    subscription.setVisibility(View.GONE);
+
                 }
                 Constant.Name=objHomeScreenBE.getName();
                 drawerAdapter = new DrawerAdapter(Constant.TITLES,Constant.ICONS,Constant.Name,getApplicationContext());// Letting the s0ystem know that the list objects are of fixed size
@@ -406,18 +405,18 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
         // System.out.println("width" + width + "height" + height);
 
         if(width>=1000 && height>=1500){
-            xx=700;
-            yy=650;
+            xx=800;
+            yy=750;
         }
         else if(width>=700 && height>=1000)
         {
-            xx=550;
-            yy=500;
+            xx=600;
+            yy=550;
         }
         else
         {
             xx=450;
-            yy=400;
+            yy=500;
         }
 
     }
@@ -474,13 +473,11 @@ public class HomeScreen extends AppCompatActivity implements CircularSeekBar.OnC
 
                                            Intent intent = new Intent(getApplicationContext(), ShopScreen.class);
                                            startActivity(intent);
-                                         dialog.dismiss();
+                                           dialog.dismiss();
                                        }
                                    }
 
         );
-
-
         dialog.show();
     }
 }

@@ -11,6 +11,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider1557225317929950"
+            android:exported="true" />
+
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
@@ -147,9 +162,12 @@
         <activity
             android:name=".TodayPeriodLog"
             android:label="" />
-        <activity android:name=".PeriodLogDetail"
-            android:label=""
-            />
+        <activity
+            android:name=".PeriodLogDetail"
+            android:label="" />
+        <activity android:name=".SelectProduct" />
+        <activity android:name=".ProductSubMenu" />
+        <activity android:name=".UploadMultipleImage"></activity>
     </application>
 
 </manifest>

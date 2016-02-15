@@ -17,6 +17,16 @@
         android:minHeight="?attr/actionBarSize">
 
 
+        <ImageButton
+           android:id="@+id/shop_change_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_bucket"
+            android:layout_alignParentLeft="true"
+            />
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +38,8 @@
             android:textStyle="bold"
             />
 
+
+
         <RelativeLayout
             android:id="@+id/rl_shop_cart"
             android:layout_width="wrap_content"
@@ -38,6 +50,8 @@
             android:layout_centerInParent="true"
             android:orientation="vertical"
             >
+
+
             <TextView
                 android:id="@+id/shop_cart_quantity"
                 android:layout_width="wrap_content"
@@ -71,10 +85,27 @@
             android:numColumns="2"
             android:stretchMode="columnWidth"
             android:gravity="center"
-            android:horizontalSpacing="3dp"
-            android:verticalSpacing="3dp"
-            android:background="#f2f2f2"
+            android:background="@color/light_bg"
             />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/shop_recycleview"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_bg"
+            android:visibility="gone"
+            android:divider="@color/light_bg"
+            android:dividerHeight="5dp"
+            />
+
 
     </LinearLayout>
 

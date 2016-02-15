@@ -9,8 +9,17 @@
     <string name="title_activity_payment">PaymentActivity</string>
     <string name="title_activity_sign_up_screen">PaymentActivity</string>
 
+    <string name="facebook_app_id">1557225317929950</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="com_facebook_loginview_log_out_button"></string>
+    <string name="com_facebook_loginview_log_in_button">Sign up</string>
+    <string name="com_facebook_loginview_log_in_button_long">Sign in with Facebook</string>
+
+    <string name="common_signin_button_text">Sign up</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

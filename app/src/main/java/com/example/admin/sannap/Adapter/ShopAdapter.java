@@ -137,11 +137,6 @@ public class ShopAdapter extends BaseAdapter implements View.OnClickListener  {
                 Constant.listQuantity.add(1);
 
 
-               /* Constant.hmItemID.put(Constant.shopID[pos], Constant.shopID[pos]);
-                Constant.hmItemName.put(Constant.shopName[pos], Constant.shopName[pos]);
-                Constant.hmItemPrice.put(Constant.shopName[pos], Constant.shopPrice[pos]);
-                Constant.hmItemImage.put(Constant.shopImage[pos], Constant.shopImage[pos]);
-                Constant.hmItemUnit.put(Constant.shopUnit[pos], Constant.shopUnit[pos]);*/
                 cartQuantity.setText(Constant.cartItem + "");
                 v.setVisibility(View.GONE);
                 break;

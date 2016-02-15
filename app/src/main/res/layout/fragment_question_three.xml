@@ -52,7 +52,6 @@
                     android:layout_height="100dp"
                     android:gravity="center"
                     android:textSize="@dimen/bigest_text_size"
-                    android:textStyle="italic"
                     android:padding="5dp"
 
                     android:textColor="#ffffff"
@@ -113,30 +112,35 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/question_three_dashed"
                     android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/question_three_dashed"
                     android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/question_three_dashed"
                     android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/question_three_dashed"
                     android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
                     />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/question_three_dashed"
                     android:layout_marginLeft="5dp"
+                    android:visibility="invisible"
                     />
 
                 <ImageButton

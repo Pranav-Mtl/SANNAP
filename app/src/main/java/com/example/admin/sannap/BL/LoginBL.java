@@ -6,7 +6,6 @@ import com.example.admin.sannap.BE.SignupBE;
 import com.example.admin.sannap.Configuration.Util;
 import com.example.admin.sannap.Constant.Constant;
 import com.example.admin.sannap.WS.RestFullWS;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -53,10 +52,11 @@ public class LoginBL {
             JSONArray jsonArrayObject = (JSONArray)obj;
             JSONObject jsonObject=(JSONObject)jsonP.parse(jsonArrayObject.get(0).toString());
             status=jsonObject.get("result").toString();
-
             if(status.equalsIgnoreCase(Constant.WS_RESPONSE_SUCCESS)){
                 String userID=jsonObject.get("user_id").toString();
                 Util.setSharedPrefrenceValue(mContext, Constant.PREFS_NAME, Constant.SP_LOGIN_ID, userID);
+                String id=Util.getSharedPrefrenceValue(mContext,Constant.SP_LOGIN_ID);
+                System.out.println("getting user id--"+id);
             }
 
 

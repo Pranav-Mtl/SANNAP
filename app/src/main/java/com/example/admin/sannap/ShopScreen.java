@@ -8,11 +8,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,9 +30,15 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
     ShopAdapter objShopAdapter;
     ProgressDialog progressDialog;
 
+    ListView listShop;
+
     RelativeLayout rlCart;
 
     TextView tvCart;
+
+    ImageButton btnChangeView;
+
+    boolean changeView;
 
 
     @Override
@@ -38,14 +47,19 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_shop_screen);
         initialize();
         new GetShopData().execute();
-
     }
 
     private void initialize(){
         list= (GridView) findViewById(R.id.shopping_gridview);
         tvCart= (TextView) findViewById(R.id.shop_cart_quantity);
         rlCart= (RelativeLayout) findViewById(R.id.rl_shop_cart);
+        btnChangeView= (ImageButton) findViewById(R.id.shop_change_view);
         progressDialog=new ProgressDialog(ShopScreen.this);
+        listShop= (ListView) findViewById(R.id.shop_recycleview);
+
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -55,6 +69,7 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         rlCart.setOnClickListener(this);
+        btnChangeView.setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +95,19 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
             case R.id.rl_shop_cart:
                 startActivity(new Intent(getApplicationContext(),Cart.class));
                 break;
+            case R.id.shop_change_view:
+                if(!changeView){
+                    listShop.setVisibility(View.VISIBLE);
+                    list.setVisibility(View.GONE);
+                    changeView=true;
+                }
+                else
+                {
+                    listShop.setVisibility(View.GONE);
+                    list.setVisibility(View.VISIBLE);
+                    changeView=false;
+                }
+                break;
         }
     }
 
@@ -102,6 +130,7 @@ public class ShopScreen extends AppCompatActivity implements View.OnClickListene
         protected void onPostExecute(String s) {
             try {
                 list.setAdapter(objShopAdapter);
+                listShop.setAdapter(objShopAdapter);
             }catch (NullPointerException e){
 
             }catch (Exception e){

@@ -1,13 +1,18 @@
 package com.example.admin.sannap.Adapter;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.admin.sannap.BL.SubscriptionBL;
+import com.example.admin.sannap.Configuration.Util;
 import com.example.admin.sannap.Constant.Constant;
 import com.example.admin.sannap.R;
 
@@ -15,64 +20,68 @@ import com.example.admin.sannap.R;
  * Created by Admin on 12/21/2015.
  */
 
-public class SubscriptionAdapter extends BaseAdapter {
+public class SubscriptionAdapter extends  RecyclerView.Adapter<SubscriptionAdapter.SubscriptionHolder>{
 
     Context context;
-
-    TextView tvName,tvPrice,tvOriginal;
     SubscriptionBL objSubscriptionBL;
+    int i=1;
 
     public SubscriptionAdapter(Context context) {
 
         this.context=context;
+        String userId=Util.getSharedPrefrenceValue(context,Constant.SP_LOGIN_ID);
         objSubscriptionBL=new SubscriptionBL();
-        objSubscriptionBL.getSubscriptionData();
+        objSubscriptionBL.getSubscriptionData(userId);
 
     }
 
     @Override
-    public int getCount() {
+    public SubscriptionHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.
+                from(context).
+                inflate(R.layout.subscription_adapter, parent, false);
 
-        if(Constant.modelName==null)
-            return 0;
+        return new SubscriptionHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(SubscriptionHolder holder, int position) {
+
+
+        i=position+1;
+
+        holder.subscriptionModel.setText(Constant.modelName[position]);
+        holder.subscriptionModelPrice.setText(" Subscription packages"+" @" + Constant.modelPrice[position]);
+        if(i%2==0) {
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#E98457"));
+        }
+        else {
+            System.out.println("getting in second position-->"+(position+1)/2);
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#F3735B"));
+        }
+
+
+    }
+
+    @Override
+    public int getItemCount() {
         return Constant.modelName.length;
     }
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
+    public static class SubscriptionHolder extends RecyclerView.ViewHolder {
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+        TextView subscriptionModel,subscriptionModelPrice;
+        LinearLayout linearLayout;
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+        public SubscriptionHolder(View gridView) {
+            super(gridView);
 
-        LayoutInflater layoutInflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            linearLayout=(LinearLayout)gridView.findViewById(R.id.linearLayout);
+            subscriptionModel = (TextView) gridView.findViewById(R.id.subscription_model_name);
+            subscriptionModelPrice=(TextView)gridView.findViewById(R.id.subscription_model_price);
 
-        View gridView;
-        if(convertView!=null)
-        {
-            gridView=convertView;
+
         }
 
-        else
-        {
-            gridView=new View(context);
-            gridView=layoutInflater.inflate(R.layout.subscription_adapter,null);
-            tvName= (TextView) gridView.findViewById(R.id.subscription_model_name);
-            tvPrice= (TextView) gridView.findViewById(R.id.subscription_model_price);
-            tvOriginal= (TextView) gridView.findViewById(R.id.subscription_model_original);
-        }
-
-        tvName.setText(Constant.modelName[position]);
-        tvOriginal.setText("Original Price: ₹"+Constant.modelOriginal[position]);
-        tvPrice.setText("Discounted Price: ₹"+Constant.modelPrice[position]);
-
-
-        return gridView;
     }
 }

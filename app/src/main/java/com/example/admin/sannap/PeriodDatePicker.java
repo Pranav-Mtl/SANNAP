@@ -23,9 +23,6 @@ import com.example.admin.sannap.BE.SignupBE;
 import com.example.admin.sannap.Constant.Constant;
 import com.imanoweb.calendarview.CalendarListener;
 import com.imanoweb.calendarview.CustomCalendarView;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -49,7 +46,6 @@ public class PeriodDatePicker extends AppCompatActivity implements View.OnClickL
     Intent intent;
 
     SignupBE objSignupBE;
-
     String selectedDate;
 
 

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/splash_bg">
+    android:background="@drawable/login_bg">
 
 
 
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="20dp"
                 android:gravity="center_horizontal"
                >
@@ -31,7 +31,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_logo_signup"/>
+                    android:background="@drawable/ic_logo_signin"/>
 
 
 
@@ -42,11 +42,11 @@
                     android:layout_marginTop="45dp"
                     android:hint="Email address"
                     android:drawablePadding="5dp"
-                    android:textColorHint="@color/textSecondaryColor"
+                    android:textColorHint="@color/white"
                     android:singleLine="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@android:color/transparent"
                     android:drawableLeft="@drawable/login_email"
 
                     />
@@ -64,12 +64,12 @@
                     android:layout_marginTop="25dp"
                     android:hint="Password"
                     android:drawablePadding="5dp"
-                    android:textColorHint="@color/textSecondaryColor"
+                    android:textColorHint="@color/white"
                     android:singleLine="true"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:inputType="textPassword"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@android:color/transparent"
                     android:drawableLeft="@drawable/login_password"
                     />
                 <LinearLayout
@@ -84,11 +84,11 @@
                     android:id="@+id/login_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/customized_color_button"
+                    android:background="@drawable/customized_button"
                     android:layout_marginTop="40dp"
                     android:text="LOGIN"
                     android:minHeight="@dimen/button_size"
-                    android:textColor="@color/white"
+                    android:textColor="@color/textColorDark"
                     />
 
                <!-- <Button
@@ -102,13 +102,23 @@
                     android:textColor="@color/button_text_color"
                     />
 -->
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                <com.facebook.login.widget.LoginButton
+                    xmlns:fb="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/fb_login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_marginTop="20dp"
-                    android:text="Login with Facebook"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/fb_btn_bg"/>
+                    android:layout_gravity="center_vertical"
+                    style="@style/FacebookLoginButton"
+                    />
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="false"
+                    />
 
 
 

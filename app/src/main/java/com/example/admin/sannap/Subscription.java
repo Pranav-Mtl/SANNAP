@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +18,14 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.admin.sannap.Adapter.SubscriptionAdapter;
+import com.example.admin.sannap.Configuration.RecyclerItemClickListener;
+import com.example.admin.sannap.Configuration.Util;
 import com.example.admin.sannap.Constant.Constant;
 
 public class Subscription extends AppCompatActivity {
 
 
-    GridView list;
+    RecyclerView listPackages;
     SubscriptionAdapter subscriptionAdapter;
     ProgressDialog progressDialog;
 
@@ -29,24 +33,39 @@ public class Subscription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscription);
-
+        listPackages= (RecyclerView) findViewById(R.id.packages_list);
+        Util.setSharedPrefrenceValue(getApplicationContext(),Constant.PREFS_NAME,Constant.preferenceTotalValue,"0");
+        Util.setSharedPrefrenceValue(getApplicationContext(),Constant.PREFS_NAME,Constant.preferenceCurrentValue,"0");
         initialize();
-
         new GetSubscriptionData().execute();
 
+        listPackages.addOnItemTouchListener(
+                new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getApplicationContext(), SelectProduct.class).putExtra("numberOfProduct", Constant.modelName[position]).putExtra("selectedProduct","0");
+                        startActivity(intent);
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), SubscriptionDetail.class).putExtra("Model", Constant.modelID[position]).putExtra("ModelName", Constant.modelName[position]).putExtra("ModelPrice",Constant.modelPrice[position]));
-            }
-        });
+                    }
+
+                })
+        );
 
 
     }
 
     private void initialize(){
-        list= (GridView) findViewById(R.id.subscription_gridview);
+
+
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        listPackages.setLayoutManager(layoutManager);
+        listPackages.setHasFixedSize(true);
+
+        final LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listPackages.setLayoutManager(llm);
+
         progressDialog=new ProgressDialog(Subscription.this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -91,7 +110,7 @@ public class Subscription extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             try {
-                list.setAdapter(subscriptionAdapter);
+                listPackages.setAdapter(subscriptionAdapter);
             }catch (NullPointerException e){
 
             }catch (Exception e){

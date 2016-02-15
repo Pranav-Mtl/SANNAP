@@ -27,13 +27,24 @@
     <color name="button_pressed">#000</color>
     <color name="button_text_color">#4c2a4f</color>
 
-    <color name="question_one">#5a62df</color>
+   <!-- <color name="question_one">#5a62df</color>
     <color name="question_two">#ff5987</color>
     <color name="question_three">#b362a7</color>
     <color name="question_four">#ff3333</color>
     <color name="question_five">#8dc73f</color>
     <color name="question_six">#e97939</color>
+    <color name="question_gray">#e5e5e5</color>-->
+
+    <color name="question_one">#E98457</color>
+    <color name="question_two">#F3735B</color>
+    <color name="question_three">#DC5F5D</color>
+    <color name="question_four">#F35B9F</color>
+    <color name="question_five">#E957E1</color>
+    <color name="question_six">#E98457</color>
+
     <color name="question_gray">#e5e5e5</color>
+
+    <color name="signin_bg">#DC5F5D</color>
 
 
 </resources>
